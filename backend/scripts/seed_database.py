@@ -1,0 +1,507 @@
+"""
+Seed the Supabase knowledge base with medical documents.
+Run once: python scripts/seed_database.py
+"""
+import os
+import sys
+
+# Fix Windows terminal Unicode issues
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
+# Add parent dir to path so we can import services
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
+from dotenv import load_dotenv
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
+
+from services.embeddings import embed_batch
+from services.supabase_client import get_supabase
+
+# ────────────────────────────────────────────────────────────
+# MEDICAL KNOWLEDGE ENTRIES
+# Add more entries here to expand the knowledge base.
+# Each entry gets an embedding and is stored in pgvector.
+# ────────────────────────────────────────────────────────────
+
+MEDICAL_DOCS = [
+    # ═══════════════════════════════════
+    # HAIR HEALTH
+    # ═══════════════════════════════════
+    {
+        "topic": "Hair Health",
+        "subtopic": "Causes of Hair Loss",
+        "content": (
+            "Hair loss (alopecia) affects approximately 50% of men by age 50 and 25% of women by age 50. "
+            "The most common type is androgenetic alopecia (male/female pattern baldness), which is caused by "
+            "genetic sensitivity to DHT (dihydrotestosterone). DHT shrinks hair follicles over time, shortening "
+            "the growth (anagen) phase from 3-5 years to weeks. Other causes include: telogen effluvium (stress-induced, "
+            "usually recovers in 6-12 months), alopecia areata (autoimmune, patchy loss), nutritional deficiencies "
+            "(iron, zinc, biotin, vitamin D), thyroid disorders, medications, and traction alopecia from tight hairstyles. "
+            "Risk factors: family history, age, significant weight loss, stress, poor nutrition, smoking."
+        ),
+        "source": "Journal of the American Academy of Dermatology",
+        "credibility_score": 0.95,
+        "evidence_level": "systematic_review",
+    },
+    {
+        "topic": "Hair Health",
+        "subtopic": "Minoxidil Treatment",
+        "content": (
+            "Minoxidil (Rogaine) is an FDA-approved topical treatment for androgenetic alopecia. It works by "
+            "prolonging the anagen (growth) phase of hair follicles and increasing blood flow to the scalp. "
+            "Available as 2% and 5% solutions/foam, applied twice daily. Clinical data: approximately 60% of "
+            "users see hair regrowth or stop hair loss progression after 4-6 months. Best for crown and vertex "
+            "thinning. Side effects: scalp irritation (7-10%), unwanted facial hair in women, initial shedding "
+            "(first 2-8 weeks, temporary), rare cardiac effects. Must be used continuously — stopping leads to "
+            "resumed hair loss within 3-6 months. Cost: approximately $10-20/month. Can be combined with "
+            "finasteride for enhanced results. Not effective for completely bald areas."
+        ),
+        "source": "Dermatologic Therapy, PubMed ID: 31456329",
+        "credibility_score": 0.95,
+        "evidence_level": "clinical_trial",
+    },
+    {
+        "topic": "Hair Health",
+        "subtopic": "Finasteride Treatment",
+        "content": (
+            "Finasteride (Propecia) is an oral prescription medication that blocks 5-alpha-reductase, the enzyme "
+            "that converts testosterone to DHT. By reducing scalp DHT by ~70%, it slows or reverses hair loss in "
+            "men with androgenetic alopecia. Clinical data: 88% of men stop further hair loss, 66% see regrowth "
+            "after 2 years of use. Dose: 1mg daily (oral). Results visible in 3-6 months, peak at 1-2 years. "
+            "Side effects: sexual dysfunction (decreased libido, erectile dysfunction) in 1-2% of users — usually "
+            "reversible on discontinuation. Post-finasteride syndrome is debated but reported by some users. "
+            "Not approved for women of childbearing age (teratogenic). Cost: $15-30/month. Often combined with "
+            "minoxidil for superior results."
+        ),
+        "source": "New England Journal of Medicine, PubMed ID: 10456942",
+        "credibility_score": 0.96,
+        "evidence_level": "clinical_trial",
+    },
+    {
+        "topic": "Hair Health",
+        "subtopic": "Nutrition for Hair Growth",
+        "content": (
+            "Hair is primarily made of keratin protein. Essential nutrients for hair health: Protein (1.2-1.6g/kg "
+            "body weight daily — sources: eggs, chicken, fish, legumes). Biotin (vitamin B7): 30-100mcg/day, "
+            "found in eggs, nuts, salmon. Deficiency causes brittle hair. Zinc: 8-11mg/day — critical for hair "
+            "tissue growth and repair, found in oysters, beef, pumpkin seeds. Iron: 8-18mg/day depending on age "
+            "and sex — ferritin levels below 40ng/mL linked to hair loss, found in red meat, spinach, lentils. "
+            "WARNING: excess iron supplementation is harmful — get blood work first. Vitamin D: 1000-4000 IU/day "
+            "— deficiency strongly linked to alopecia areata, source: sunlight, fatty fish. Omega-3 fatty acids: "
+            "reduce scalp inflammation, found in salmon, walnuts, flaxseed. Vitamin E: antioxidant protection of "
+            "follicles, found in almonds, sunflower seeds. Avoid: excessive vitamin A (can cause hair loss), "
+            "crash diets (trigger telogen effluvium), excessive sugar (increases DHT)."
+        ),
+        "source": "Dermatology Practical & Conceptual Journal",
+        "credibility_score": 0.90,
+        "evidence_level": "review_article",
+    },
+    # ═══════════════════════════════════
+    # WEIGHT MANAGEMENT
+    # ═══════════════════════════════════
+    {
+        "topic": "Weight Management",
+        "subtopic": "Safe Weight Loss Science",
+        "content": (
+            "Sustainable weight loss is based on energy balance: consuming fewer calories than you burn (caloric "
+            "deficit). Safe rate: 0.5-1kg per week, requiring a 500-750 calorie daily deficit. Total daily energy "
+            "expenditure (TDEE) = Basal Metabolic Rate (BMR) × Activity Factor. For most adults, BMR is 1400-2000 "
+            "calories. Macronutrient recommendations during a cut: Protein 1.6-2.2g/kg (preserves muscle), "
+            "Fat 0.8-1g/kg (hormonal health), Carbs fill remaining calories. Evidence shows high-protein diets "
+            "have better adherence, more fat loss, and better muscle retention. Crash diets (<1200 cal) cause "
+            "muscle loss, metabolic adaptation, nutrient deficiencies, and almost always lead to rebound weight "
+            "gain. Weight loss plateaus are normal at 6-8 weeks — reduce intake by 100-200 cal or increase "
+            "activity. Expected timeline: weeks 1-2 see 1-3kg (mostly water), weeks 3+ see 0.5-0.75kg/week of "
+            "true fat loss."
+        ),
+        "source": "International Journal of Obesity",
+        "credibility_score": 0.93,
+        "evidence_level": "meta_analysis",
+    },
+    {
+        "topic": "Weight Management",
+        "subtopic": "Meal Planning for Fat Loss",
+        "content": (
+            "A sustainable fat loss meal plan focuses on high-satiety, nutrient-dense foods. Example 2000 calorie "
+            "plan: Breakfast (450 cal): 3 eggs scrambled + whole grain toast + avocado quarter. Snack (150 cal): "
+            "Greek yogurt (150g) + berries. Lunch (600 cal): grilled chicken breast (200g) + brown rice (150g "
+            "cooked) + roasted vegetables (broccoli, peppers) + olive oil drizzle. Snack (100 cal): apple + 15 "
+            "almonds. Dinner (700 cal): baked salmon (180g) + sweet potato (200g) + large mixed salad + olive oil "
+            "dressing. Key principles: eat protein at every meal (30-40g per meal), fill half your plate with "
+            "vegetables, drink 2-3L water daily, limit liquid calories (soda, juice, alcohol), meal prep to avoid "
+            "impulsive eating, eat slowly (20+ minutes per meal). Foods to minimize: ultra-processed foods, "
+            "sugary drinks, deep-fried foods, white bread/pasta (choose whole grain instead)."
+        ),
+        "source": "Academy of Nutrition and Dietetics",
+        "credibility_score": 0.88,
+        "evidence_level": "clinical_guideline",
+    },
+    {
+        "topic": "Weight Management",
+        "subtopic": "Intermittent Fasting",
+        "content": (
+            "Intermittent fasting (IF) is a dietary pattern cycling between eating and fasting periods. Common "
+            "protocols: 16:8 (16h fast, 8h eating window — most popular), 5:2 (eat normally 5 days, restrict to "
+            "500-600 cal for 2 non-consecutive days), Eat-Stop-Eat (24h fast 1-2x/week). Research findings: IF "
+            "is not superior to continuous calorie restriction for weight loss — the benefit is easier adherence "
+            "for some people. Benefits: may improve insulin sensitivity, reduce inflammation markers, increase "
+            "autophagy (cellular cleanup). Drawbacks: not suitable for pregnant/breastfeeding women, people with "
+            "eating disorders, type 1 diabetes, or underweight individuals. Can increase cortisol if done "
+            "excessively. Common mistake: overeating in the eating window — you still need a caloric deficit. "
+            "Best approach: start with 14:10 and gradually increase fasting window."
+        ),
+        "source": "New England Journal of Medicine, DOI: 10.1056/NEJMra1905136",
+        "credibility_score": 0.94,
+        "evidence_level": "review_article",
+    },
+    {
+        "topic": "Weight Management",
+        "subtopic": "Exercise for Weight Loss",
+        "content": (
+            "Exercise alone typically produces modest weight loss (2-3kg over 6 months) without dietary changes, "
+            "but is critical for maintaining weight loss and body composition. Optimal approach combines: "
+            "Strength training (3-4x/week): preserves and builds muscle during calorie deficit, increases resting "
+            "metabolic rate by 50-100 cal/day, targets: compound movements (squats, deadlifts, bench press, rows). "
+            "Cardio (2-3x/week, 30-45 min): moderate intensity (Zone 2, can hold a conversation), options: brisk "
+            "walking, cycling, swimming, elliptical. Burns 200-400 cal/session. HIIT (1-2x/week, 15-20 min): "
+            "30 sec all-out effort, 30-60 sec rest. Higher calorie burn per minute, EPOC (excess post-exercise "
+            "oxygen consumption) burns extra calories for 24-48h. NEAT (Non-Exercise Activity Thermogenesis): "
+            "walking, standing, fidgeting — can account for 200-800 cal/day. Aim for 8000-12000 steps daily. "
+            "Warning: don't compensate by eating more after exercise — a common mistake."
+        ),
+        "source": "American College of Sports Medicine Guidelines",
+        "credibility_score": 0.92,
+        "evidence_level": "clinical_guideline",
+    },
+    # ═══════════════════════════════════
+    # MUSCLE BUILDING
+    # ═══════════════════════════════════
+    {
+        "topic": "Muscle Building",
+        "subtopic": "Progressive Overload Fundamentals",
+        "content": (
+            "Progressive overload is the foundational principle of muscle growth (hypertrophy). The body only "
+            "builds new muscle when presented with a stimulus that exceeds what it's adapted to. Methods: increase "
+            "weight (add 2.5-5kg when you can complete all sets/reps), increase reps (work within 6-12 rep range "
+            "for hypertrophy, 1-5 for strength), increase sets (10-20 sets per muscle group per week is optimal), "
+            "improve form (better mind-muscle connection). Training split recommendations: Beginners (0-1 year): "
+            "Full body 3x/week. Intermediate (1-3 years): Upper/Lower 4x/week or Push/Pull/Legs. Advanced (3+ "
+            "years): PPL 6x/week or specialized splits. Key compounds: Squat (quads, glutes), Deadlift (posterior "
+            "chain), Bench Press (chest, triceps, front delts), Overhead Press (shoulders), Rows (back, biceps), "
+            "Pull-ups (lats, biceps). Rest between sets: 2-3 minutes for compounds, 1-2 minutes for isolation. "
+            "Deload every 4-8 weeks (reduce volume/intensity by 40-50%)."
+        ),
+        "source": "Journal of Strength and Conditioning Research",
+        "credibility_score": 0.93,
+        "evidence_level": "systematic_review",
+    },
+    {
+        "topic": "Muscle Building",
+        "subtopic": "Protein Requirements and Timing",
+        "content": (
+            "Protein is the primary macronutrient for muscle protein synthesis (MPS). Optimal intake for muscle "
+            "building: 1.6-2.2g per kg body weight per day. Above 2.2g/kg provides diminishing returns. "
+            "Distribution: spread across 3-5 meals, 30-50g per meal (maximizes MPS per meal). Timing: consuming "
+            "protein within 2h post-workout is beneficial but the 'anabolic window' is wider than previously "
+            "thought — total daily intake matters more. Best sources by biological value: whey protein (fast "
+            "absorbing, ideal post-workout), eggs (complete amino acid profile), chicken breast (lean, 31g "
+            "protein per 100g), salmon (protein + omega-3), Greek yogurt (20g per cup), cottage cheese (slow "
+            "digesting, good before bed), lentils/chickpeas (plant-based, combine with grains for complete amino "
+            "acids). Leucine threshold: 2.5-3g leucine per meal triggers MPS — whey, eggs, and chicken are rich "
+            "in leucine. For vegans, combine multiple protein sources and consider supplementing with BCAAs."
+        ),
+        "source": "British Journal of Sports Medicine, DOI: 10.1136/bjsports-2017-097608",
+        "credibility_score": 0.95,
+        "evidence_level": "meta_analysis",
+    },
+    {
+        "topic": "Muscle Building",
+        "subtopic": "Supplement Science — Creatine",
+        "content": (
+            "Creatine monohydrate is the most studied and effective supplement for strength and muscle gains. "
+            "Mechanism: increases phosphocreatine stores in muscles, providing more ATP for high-intensity efforts. "
+            "Benefits: 5-15% increase in strength, 1-2kg lean mass gain in first month (water retention + muscle), "
+            "enhanced recovery between sets. Dosing: 5g daily (no loading phase necessary), take any time of day "
+            "with water. Loading protocol (optional): 20g/day split into 4 doses for 5-7 days, then 5g/day "
+            "maintenance. Safety: extensively studied for 30+ years, safe for healthy adults long-term. No kidney "
+            "damage in healthy individuals (debunked myth). May slightly increase creatinine levels (not the same "
+            "as creatinine from kidney damage). Responders vs non-responders: ~30% of people are 'non-responders' "
+            "(already have high natural creatine stores). Cost: ~$10-15/month. Buy creatine MONOHYDRATE specifically "
+            "— other forms (HCl, ethyl ester) are not more effective despite higher prices."
+        ),
+        "source": "International Society of Sports Nutrition Position Stand",
+        "credibility_score": 0.96,
+        "evidence_level": "position_stand",
+    },
+    # ═══════════════════════════════════
+    # HORMONES
+    # ═══════════════════════════════════
+    {
+        "topic": "Hormones",
+        "subtopic": "Natural Testosterone Optimization",
+        "content": (
+            "Testosterone naturally declines ~1-2% per year after age 30. Normal range: 300-1000 ng/dL for men. "
+            "Evidence-based methods to optimize naturally: SLEEP (most critical): 7-9 hours/night, sleeping <5h "
+            "reduces testosterone by 15%. Maintain consistent sleep schedule. EXERCISE: resistance training "
+            "increases testosterone acutely and chronically — compound movements with heavy loads are best. "
+            "Excessive endurance exercise (overtraining) can DECREASE testosterone. NUTRITION: adequate calories "
+            "(severe deficit drops T levels), sufficient fat intake (0.8-1g/kg — cholesterol is a T precursor), "
+            "zinc (11mg/day — found in oysters, beef, pumpkin seeds), vitamin D (2000-4000 IU if deficient), "
+            "magnesium (400-420mg/day — found in dark chocolate, avocado, almonds). LIFESTYLE: manage stress "
+            "(cortisol is inversely related to testosterone), maintain healthy body fat (15-20% for men), avoid "
+            "excess alcohol (3+ drinks significantly suppress T), avoid BPA in plastics, cold showers (limited "
+            "evidence but no harm). WHAT DOESN'T WORK: most 'testosterone booster' supplements are scams — "
+            "tribulus, fenugreek, ashwagandha have minimal evidence at best."
+        ),
+        "source": "Journal of Clinical Endocrinology & Metabolism",
+        "credibility_score": 0.91,
+        "evidence_level": "review_article",
+    },
+    {
+        "topic": "Hormones",
+        "subtopic": "Thyroid Health and Metabolism",
+        "content": (
+            "The thyroid gland controls metabolism via T3 (triiodothyronine) and T4 (thyroxine) hormones. "
+            "Hypothyroidism (underactive): affects 5% of the population, causes fatigue, weight gain, cold "
+            "intolerance, brain fog, hair loss, constipation, dry skin, depression. Diagnosis: TSH >4.5 mIU/L "
+            "(elevated), low free T4. Treatment: levothyroxine (synthetic T4), taken on empty stomach in morning. "
+            "Hyperthyroidism (overactive): causes weight loss, anxiety, rapid heart rate, heat intolerance, "
+            "tremors, insomnia. Diagnosis: TSH <0.4 mIU/L (suppressed), elevated free T4. Treatment: "
+            "methimazole, radioactive iodine, or surgery. Nutritional support: iodine (150mcg/day from iodized "
+            "salt, seaweed, fish — but excess iodine can worsen thyroid disease), selenium (55-200mcg/day from "
+            "Brazil nuts — supports T4 to T3 conversion), zinc, vitamin D. Avoid: soy in excess (may interfere "
+            "with thyroid medication absorption), cruciferous vegetables in extremely large raw quantities. "
+            "Blood tests to request: TSH, free T3, free T4, thyroid antibodies (TPO-Ab, TG-Ab)."
+        ),
+        "source": "American Thyroid Association Clinical Guidelines",
+        "credibility_score": 0.95,
+        "evidence_level": "clinical_guideline",
+    },
+    # ═══════════════════════════════════
+    # NUTRITION & SUPPLEMENTS
+    # ═══════════════════════════════════
+    {
+        "topic": "Nutrition",
+        "subtopic": "Essential Vitamins and Deficiencies",
+        "content": (
+            "Common nutrient deficiencies that affect health: Vitamin D: ~42% of US adults are deficient. "
+            "Symptoms: fatigue, bone pain, muscle weakness, depression, weak immunity. Test: 25-hydroxyvitamin D "
+            "blood test. Optimal range: 30-50 ng/mL. Supplementation: 1000-4000 IU daily with fat-containing "
+            "meal. Iron: most common deficiency worldwide, especially in women. Symptoms: fatigue, pale skin, "
+            "shortness of breath, hair loss. Test: serum ferritin (optimal: 40-100 ng/mL for women, 50-150 ng/mL "
+            "for men). Don't supplement without blood work — iron overload is dangerous. B12: common in vegans/"
+            "vegetarians and elderly. Symptoms: fatigue, numbness/tingling, memory problems. Sources: meat, fish, "
+            "eggs, fortified foods, or supplement 500-1000mcg. Magnesium: ~50% of Americans get below the EAR. "
+            "Symptoms: muscle cramps, poor sleep, anxiety, headaches. Dose: 300-400mg/day, best forms: glycinate "
+            "(sleep), citrate (general), threonate (cognitive). Omega-3: EPA and DHA from fatty fish 2-3x/week "
+            "or supplement 1-2g combined EPA+DHA daily. Reduces inflammation, supports brain and heart health."
+        ),
+        "source": "National Institutes of Health — Office of Dietary Supplements",
+        "credibility_score": 0.92,
+        "evidence_level": "reference_standard",
+    },
+    {
+        "topic": "Nutrition",
+        "subtopic": "Supplement Safety and Effectiveness",
+        "content": (
+            "Evidence-based supplements ranked by research quality: TIER 1 — Strong evidence: Creatine monohydrate "
+            "(strength, muscle), Vitamin D (if deficient), Omega-3 (inflammation, heart), Protein powder (convenience, "
+            "hitting targets), Caffeine (performance, 3-6mg/kg). TIER 2 — Moderate evidence: Magnesium (sleep, "
+            "recovery), Zinc (immunity, testosterone support if deficient), Ashwagandha (stress, cortisol reduction — "
+            "300-600mg KSM-66), Melatonin (sleep onset, 0.5-3mg), Probiotics (gut health — strain-specific). "
+            "TIER 3 — Weak/insufficient evidence: BCAAs (unnecessary if protein intake is adequate), glutamine "
+            "(minimal benefit for healthy people), testosterone boosters (mostly ineffective), collagen (limited "
+            "absorption evidence), greens powders (not a substitute for vegetables). RED FLAGS — Avoid: proprietary "
+            "blends (hide dosages), claims of 'miracle results', products without third-party testing (look for "
+            "NSF, Informed Sport, USP labels), mega-doses exceeding tolerable upper limits. General rule: "
+            "supplements complement a good diet, they don't replace it."
+        ),
+        "source": "Examine.com Evidence-Based Supplement Guide",
+        "credibility_score": 0.90,
+        "evidence_level": "review_article",
+    },
+    # ═══════════════════════════════════
+    # SLEEP & RECOVERY
+    # ═══════════════════════════════════
+    {
+        "topic": "Sleep & Recovery",
+        "subtopic": "Sleep Optimization for Health",
+        "content": (
+            "Sleep is arguably the most important health behavior. Adults need 7-9 hours per night. Chronic sleep "
+            "deprivation (<6h) increases risk of: obesity (+55%), type 2 diabetes (+48%), cardiovascular disease "
+            "(+45%), depression (+300%), weakened immunity (4x more likely to catch cold). Sleep optimization: "
+            "ENVIRONMENT: cool room (65-68°F / 18-20°C), pitch dark (blackout curtains or eye mask), quiet "
+            "(earplugs or white noise). TIMING: consistent bedtime within 30 min every day including weekends "
+            "(stabilizes circadian rhythm). HABITS: no caffeine within 8-10 hours of bedtime, no alcohol within "
+            "3 hours (disrupts REM sleep despite feeling sedating), no screens 1h before bed (blue light "
+            "suppresses melatonin — or use night mode), bright light exposure in the morning (10-15 min of "
+            "sunlight sets circadian clock). SUPPLEMENTS: melatonin 0.5-3mg (30 min before bed — more is not "
+            "better), magnesium glycinate 200-400mg (relaxation), L-theanine 200mg (anxiolytic without drowsiness)."
+        ),
+        "source": "National Sleep Foundation + Matthew Walker, Why We Sleep",
+        "credibility_score": 0.91,
+        "evidence_level": "review_article",
+    },
+    # ═══════════════════════════════════
+    # STRESS & MENTAL HEALTH
+    # ═══════════════════════════════════
+    {
+        "topic": "Stress & Mental Health",
+        "subtopic": "Stress Management and Cortisol",
+        "content": (
+            "Chronic stress elevates cortisol, leading to: increased abdominal fat storage, muscle breakdown, "
+            "weakened immunity, poor sleep, reduced testosterone, hair loss (telogen effluvium), impaired digestion, "
+            "elevated blood pressure, brain fog/memory issues. Evidence-based stress management: EXERCISE: "
+            "30-45 min of moderate activity 4-5x/week reduces cortisol by 15-25%. MEDITATION: 10-20 min daily "
+            "mindfulness meditation reduces cortisol by 20-25% (validated in multiple RCTs). BREATHING: "
+            "physiological sigh (double inhale through nose + long exhale through mouth) reduces stress in "
+            "real-time (Stanford research). NATURE: 20 min in nature ('forest bathing') reduces cortisol by "
+            "12-16%. SOCIAL CONNECTION: strong relationships are the #1 predictor of longevity and stress "
+            "resilience. LIMIT NEWS/SOCIAL MEDIA: chronic doomscrolling increases anxiety. SLEEP: poor sleep "
+            "is both a cause and consequence of high cortisol — prioritize it. When to seek help: persistent "
+            "anxiety/depression lasting 2+ weeks, panic attacks, suicidal thoughts — see a mental health "
+            "professional. Therapy (CBT) is as effective as medication for mild-moderate anxiety/depression."
+        ),
+        "source": "American Psychological Association, Psychoneuroendocrinology",
+        "credibility_score": 0.90,
+        "evidence_level": "systematic_review",
+    },
+    # ═══════════════════════════════════
+    # SKIN HEALTH
+    # ═══════════════════════════════════
+    {
+        "topic": "Skin Health",
+        "subtopic": "Acne Causes and Treatments",
+        "content": (
+            "Acne vulgaris affects 85% of people aged 12-24. Causes: excess sebum production (hormonal, especially "
+            "androgens and DHT), clogged pores (dead skin + oil), bacterial overgrowth (C. acnes), inflammation. "
+            "Treatment ladder: MILD: Benzoyl peroxide 2.5-5% (kills bacteria, use at night, start low to avoid "
+            "irritation), salicylic acid 2% (BHA, unclogs pores), niacinamide 5-10% (reduces inflammation and "
+            "oil production), gentle cleanser (pH 4.5-5.5, avoid harsh soaps). MODERATE: retinoids (tretinoin "
+            "0.025-0.05% — prescription, gold standard for prevention, takes 12 weeks to see results), azelaic "
+            "acid 15-20% (anti-inflammatory, safe in pregnancy). SEVERE: oral antibiotics (doxycycline — short "
+            "term only), isotretinoin/Accutane (for severe/cystic, cure rate 80%+, significant side effects — "
+            "requires monitoring). Diet factors: high glycemic foods (sugar, white bread) worsen acne in some "
+            "people, dairy (especially skim milk) associated with acne, chocolate association is weak. "
+            "Lifestyle: don't pick/pop (causes scarring), change pillowcase 2x/week, use non-comedogenic "
+            "products, always use sunscreen (SPF 30+)."
+        ),
+        "source": "British Journal of Dermatology, AAD Guidelines",
+        "credibility_score": 0.93,
+        "evidence_level": "clinical_guideline",
+    },
+    # ═══════════════════════════════════
+    # GUT HEALTH
+    # ═══════════════════════════════════
+    {
+        "topic": "Gut Health",
+        "subtopic": "Microbiome and Digestive Health",
+        "content": (
+            "The gut microbiome contains 100 trillion bacteria that influence immunity, mood, metabolism, and "
+            "inflammation. A diverse microbiome is associated with better health outcomes. Supporting gut health: "
+            "FIBER: aim for 25-35g/day from diverse sources — vegetables, fruits, whole grains, legumes, nuts. "
+            "Each type of fiber feeds different bacteria. FERMENTED FOODS: yogurt, kefir, sauerkraut, kimchi, "
+            "kombucha — contain live beneficial bacteria. Studies show 6 servings/week increases microbiome "
+            "diversity. PREBIOTICS: specific fibers that feed good bacteria — garlic, onions, leeks, asparagus, "
+            "bananas, oats. PROBIOTICS: supplements with specific strains — Lactobacillus rhamnosus GG (diarrhea "
+            "prevention), Saccharomyces boulardii (antibiotic-associated diarrhea), VSL#3 (IBS). Choose strains "
+            "with clinical evidence, not just CFU count. AVOID: unnecessary antibiotics (devastate microbiome), "
+            "excessive processed food (reduces diversity), artificial sweeteners (may disrupt microbiome — "
+            "research ongoing), chronic stress (alters gut-brain axis). Common symptoms of poor gut health: "
+            "bloating, gas, constipation/diarrhea, food sensitivities, fatigue, brain fog, skin issues."
+        ),
+        "source": "Cell Journal, Stanford Microbiome Research Center",
+        "credibility_score": 0.91,
+        "evidence_level": "review_article",
+    },
+    # ═══════════════════════════════════
+    # HEART / CARDIOVASCULAR
+    # ═══════════════════════════════════
+    {
+        "topic": "Heart Health",
+        "subtopic": "Cardiovascular Disease Prevention",
+        "content": (
+            "Cardiovascular disease (CVD) is the #1 cause of death globally. Key modifiable risk factors: high "
+            "blood pressure (optimal: <120/80 mmHg), high LDL cholesterol (optimal: <100 mg/dL), smoking, "
+            "diabetes, obesity, physical inactivity, poor diet, excessive alcohol, chronic stress. Prevention: "
+            "EXERCISE: 150 min/week moderate or 75 min/week vigorous aerobic activity. Even walking 7000+ "
+            "steps/day reduces CVD risk by 50-70%. DIET: Mediterranean diet is the most studied — olive oil, "
+            "fish, vegetables, nuts, whole grains, limited red meat. Reduces CVD events by 30% (PREDIMED trial). "
+            "Limit sodium to <2300mg/day (ideally <1500mg). Increase potassium (bananas, potatoes, leafy greens). "
+            "CHOLESTEROL: statins are effective but lifestyle changes often sufficient for borderline levels. "
+            "Plant sterols (2g/day) reduce LDL by 10%. Omega-3 (EPA 2-4g/day) reduces triglycerides. BLOOD "
+            "PRESSURE: DASH diet, exercise, weight loss, stress management can reduce systolic BP by 10-20 mmHg. "
+            "Screening: blood pressure at every doctor visit, lipid panel every 5 years starting at age 20."
+        ),
+        "source": "American Heart Association, The Lancet",
+        "credibility_score": 0.96,
+        "evidence_level": "meta_analysis",
+    },
+    # ═══════════════════════════════════
+    # IMMUNITY
+    # ═══════════════════════════════════
+    {
+        "topic": "Immunity",
+        "subtopic": "Immune System Support",
+        "content": (
+            "The immune system is a complex network. Evidence-based immune support: SLEEP: 7-9 hours — sleeping "
+            "<6h makes you 4.2x more likely to catch a cold. Sleep is when immune cells are most active. "
+            "EXERCISE: moderate activity (30-45 min, 5x/week) strengthens immune function. But chronic intense "
+            "exercise without recovery (overtraining) suppresses immunity. NUTRITION: Vitamin C (200-1000mg/day "
+            "from citrus, bell peppers, kiwi — reduces cold duration by 8% in adults), Vitamin D (2000-4000 IU "
+            "if deficient — reduces respiratory infection risk by 42%), Zinc (15-30mg at cold onset — reduces "
+            "duration by 33% if taken within 24h, use zinc acetate lozenges), Elderberry (standardized extract "
+            "has moderate evidence for reducing cold duration). LIFESTYLE: manage stress (chronic stress weakens "
+            "NK cell activity), don't smoke, limit alcohol (>2 drinks/day impairs immune response), wash hands "
+            "regularly. PROBIOTICS: Lactobacillus and Bifidobacterium strains may reduce upper respiratory "
+            "infections. What DOESN'T work: mega-dose vitamin C (>2g/day provides no additional benefit), most "
+            "'immune booster' supplements, detox teas."
+        ),
+        "source": "British Medical Journal, Harvard Health",
+        "credibility_score": 0.89,
+        "evidence_level": "review_article",
+    },
+]
+
+
+def seed():
+    """Insert all medical documents with embeddings into Supabase."""
+    print(f"[*] Preparing to seed {len(MEDICAL_DOCS)} medical documents...")
+    print("[*] Generating embeddings with HuggingFace all-MiniLM-L6-v2 (local)...")
+
+    # Batch-generate embeddings (much faster than one-by-one)
+    texts = [doc["content"] for doc in MEDICAL_DOCS]
+    embeddings = embed_batch(texts)
+    print(f"[OK] Generated {len(embeddings)} embeddings.")
+
+    # Insert into Supabase
+    client = get_supabase()
+    success_count = 0
+    error_count = 0
+
+    for doc, embedding in zip(MEDICAL_DOCS, embeddings):
+        try:
+            client.table("medical_documents").insert(
+                {
+                    "topic": doc["topic"],
+                    "subtopic": doc.get("subtopic"),
+                    "content": doc["content"],
+                    "source": doc.get("source"),
+                    "credibility_score": doc.get("credibility_score", 0.85),
+                    "evidence_level": doc.get("evidence_level"),
+                    "embedding": embedding,
+                }
+            ).execute()
+            success_count += 1
+            print(f"  [OK] [{success_count}/{len(MEDICAL_DOCS)}] {doc['topic']} - {doc.get('subtopic', 'N/A')}")
+        except Exception as e:
+            error_count += 1
+            print(f"  [ERROR] Error inserting {doc['subtopic']}: {e}")
+
+    print(f"\nSeeding complete! {success_count} inserted, {error_count} errors.")
+    print("Your knowledge base is ready for RAG queries!")
+
+
+if __name__ == "__main__":
+    seed()

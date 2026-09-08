@@ -1,6 +1,6 @@
 """
 Groq LLM Client
-Uses Llama 3.3 70B (open source model) via Groq's free API.
+Uses openai/gpt-oss-120b
 Streams responses for better UX.
 Upgraded to: Elite multi-domain health AI with full reasoning protocol.
 """
@@ -12,7 +12,8 @@ from groq import Groq
 
 logger = logging.getLogger(__name__)
 
-GROQ_MODEL = "llama-3.3-70b-versatile"
+# GROQ_MODEL = "llama-3.3-70b-versatile"
+GROQ_MODEL = "openai/gpt-oss-120b"
 
 SYSTEM_PROMPT = """You are MedAI — an elite health and medical AI assistant. Think of yourself as a hybrid of a board-certified physician, registered dietitian, certified personal trainer, clinical psychologist, and pharmacist all in one.
 

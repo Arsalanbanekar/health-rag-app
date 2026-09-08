@@ -1,19 +1,17 @@
 """
-RAG Pipeline — Vectorless keyword-based retrieval + LLM generation.
-Upgraded: removed domain restriction, removed vector search, added keyword retrieval fallback.
+RAG Pipeline — Hybrid Retrieval (Metadata + Vector) + LLM generation.
 """
 import logging
 import re
-from typing import List, Dict
+from typing import List, Dict, Tuple
 
-from services.embeddings import rank_documents_by_keyword
-from services.supabase_client import get_all_documents, log_query, log_out_of_domain
+from services.supabase_client import log_query, log_out_of_domain
 from services.groq_client import generate_response, stream_response
+from services.retrieval.hybrid_search import perform_hybrid_retrieval
 
 logger = logging.getLogger(__name__)
 
-# Only truly non-health questions are rejected — math, poetry, coding, etc.
-# We use a small blocklist of pure off-topic signals instead of a narrow allowlist.
+# Non-health questions are filtered at the gate
 NON_HEALTH_SIGNALS = [
     r"^\s*what is \d+[\s\+\-\*\/]\d+",          # math expressions
     r"^\s*write (me )?(a |an )?(poem|story|essay|song|code|script|program)",
@@ -26,8 +24,7 @@ NON_HEALTH_SIGNALS = [
 
 def is_non_health_query(query: str) -> bool:
     """
-    Returns True only if the query is CLEARLY not health-related at all.
-    We use a small blocklist instead of a narrow allowlist — everything else is passed to the LLM.
+    Returns True if the query is identified as out-of-domain (non-health related).
     """
     q = query.strip().lower()
     for pattern in NON_HEALTH_SIGNALS:
@@ -36,39 +33,15 @@ def is_non_health_query(query: str) -> bool:
     return False
 
 
-def format_retrieved_context(documents: List[dict]) -> str:
-    """Format retrieved medical documents into a readable context block for the LLM."""
-    if not documents:
-        return ""
-
-    sections = []
-    for i, doc in enumerate(documents, 1):
-        source_info = f" (Source: {doc.get('source', 'Medical Database')})" if doc.get("source") else ""
-        credibility = doc.get("credibility_score", 0)
-        similarity = doc.get("similarity", 0)
-        sections.append(
-            f"### Document {i}{source_info}\n"
-            f"**Topic**: {doc.get('topic', 'N/A')} — {doc.get('subtopic', '')}\n"
-            f"**Credibility**: {credibility:.0%} | **Relevance**: {similarity:.0%}\n\n"
-            f"{doc.get('content', '')}"
-        )
-    return "\n\n---\n\n".join(sections)
-
-
-def retrieve_context(query: str) -> tuple[List[dict], str]:
+def retrieve_context(query: str) -> Tuple[List[Dict], str]:
     """
-    Vectorless retrieval: fetch all docs from Supabase, rank by keyword match.
-    Returns (retrieved_docs, formatted_context_string).
+    Retrieves contexts from the database using our new Hybrid Search package.
+    Kept for backwards compatibility with test files or direct imports.
     """
     try:
-        all_docs = get_all_documents()
-        if not all_docs:
-            return [], ""
-        ranked = rank_documents_by_keyword(query, all_docs, top_k=6, threshold=0.05)
-        context = format_retrieved_context(ranked)
-        return ranked, context
+        return perform_hybrid_retrieval(query)
     except Exception as e:
-        logger.warning(f"Keyword retrieval failed, falling back to no context: {e}")
+        logger.error(f"Hybrid retrieval failed, returning empty context: {e}")
         return [], ""
 
 
@@ -78,13 +51,14 @@ def process_query(
     conversation_history: List[Dict] = None,
 ) -> dict:
     """
-    Full RAG pipeline (vectorless):
-    1. Soft non-health check (only block clearly off-topic queries)
-    2. Keyword-based document retrieval from Supabase
-    3. LLM generation with context + conversation history
-    4. Log everything
+    Full Hybrid RAG pipeline:
+    1. Soft domain validation check.
+    2. Intent Classification + Metadata Extraction.
+    3. Dense Vector Similarity Search with Metadata filters.
+    4. LLM Generation via Groq API.
+    5. Logging query details for system intelligence.
     """
-    # Step 1: Only block truly non-health queries
+    # Step 1: Filter out-of-domain queries
     if is_non_health_query(query):
         out_of_domain_msg = (
             "I'm MedAI, your personal health and medical assistant. "
@@ -103,10 +77,10 @@ def process_query(
             "message": "out_of_domain",
         }
 
-    # Step 2: Keyword-based document retrieval (vectorless)
+    # Step 2 & 3: Run intent-based hybrid metadata-vector search
     retrieved_docs, context = retrieve_context(query)
 
-    # Step 3: LLM generation with context and conversation history
+    # Step 4: Perform reasoning/inference via Groq client
     try:
         llm_response = generate_response(query, context, conversation_history=conversation_history)
     except Exception as e:
@@ -120,11 +94,14 @@ def process_query(
             "message": "llm_error",
         }
 
-    # Step 4: Collect sources
+    # Step 5: Collect metadata-rich sources for UI presentation
     sources = [
         {
             "topic": doc.get("topic", ""),
             "subtopic": doc.get("subtopic", ""),
+            "category": doc.get("category", ""),
+            "tags": doc.get("tags", []),
+            "source_type": doc.get("source_type", ""),
             "source": doc.get("source", "Medical Database"),
             "credibility_score": doc.get("credibility_score", 0),
             "similarity": doc.get("similarity", 0),
@@ -132,7 +109,7 @@ def process_query(
         for doc in retrieved_docs
     ]
 
-    # Step 5: Log for training
+    # Log to training outputs
     log_query(query, llm_response, True, sources, session_id)
 
     return {

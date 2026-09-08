@@ -1,7 +1,6 @@
 """
 MedAI — Health & Wellness RAG Assistant — FastAPI Backend
-Powered by: Groq (LLM) + Keyword Retrieval (vectorless) + Supabase (storage)
-Upgraded: Removed domain restriction, removed vector search, full multi-domain health AI.
+Powered by: Groq (LLM) + Supabase pgvector (hybrid semantic + metadata search).
 """
 import logging
 import os
@@ -16,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
 from models.schemas import QueryRequest, QueryResponse, HealthStatus
-from services.rag_pipeline import process_query, retrieve_context, format_retrieved_context
+from services.rag_pipeline import process_query, retrieve_context
 from services.supabase_client import get_documents_count, log_query, get_supabase
 from services.groq_client import stream_response
 
@@ -46,8 +45,8 @@ metrics = {
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator:
-    """Startup — no embedding model needed in vectorless mode."""
-    logger.info("🚀 Starting MedAI Health RAG API (vectorless mode)...")
+    """Startup — the embedding model lazy-loads on first query, not here."""
+    logger.info("🚀 Starting MedAI Health RAG API (hybrid pgvector mode)...")
     logger.info("✅ Server ready — accepting requests.")
     yield
     logger.info("🛑 Shutting down MedAI Health RAG API...")
@@ -55,7 +54,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator:
 
 app = FastAPI(
     title="MedAI — Health & Wellness RAG API",
-    description="Elite multi-domain health AI powered by Groq LLM + keyword retrieval",
+    description="Elite multi-domain health AI powered by Groq LLM + hybrid pgvector retrieval",
     version="2.0.0",
     lifespan=lifespan,
 )
@@ -112,9 +111,9 @@ async def health_check():
     return HealthStatus(
         status="ok",
         knowledge_base_docs=doc_count,
-        model="llama-3.3-70b-versatile (Groq)",
-        embedding_model="keyword-retrieval (vectorless)",
-        vector_db="Supabase (keyword ranked)",
+        model="openai/gpt-oss-120b (Groq)",
+        embedding_model="BAAI/bge-small-en-v1.5 (384-dim)",
+        vector_db="Supabase pgvector (Hybrid RAG)",
     )
 
 
@@ -174,7 +173,7 @@ async def query_health_stream(request: QueryRequest):
     # Parse conversation history from request
     conversation_history = [{"role": msg.role, "content": msg.content} for msg in request.history] if request.history else []
 
-    # Keyword-based retrieval (vectorless)
+    # Hybrid retrieval: metadata filters + pgvector semantic search
     try:
         retrieved_docs, context = retrieve_context(request.query)
     except Exception as e:

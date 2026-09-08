@@ -109,8 +109,7 @@ def get_documents_count() -> int:
 
 def get_all_documents() -> List[dict]:
     """
-    Fetch all medical documents (without embeddings) for keyword-based retrieval.
-    Used by the vectorless RAG pipeline.
+    Fetch all medical documents (without embeddings).
     Attempts to read from Supabase, falls back to local JSON cache on failure.
     """
     # 1. Try fetching from Supabase database

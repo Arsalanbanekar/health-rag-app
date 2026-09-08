@@ -42,3 +42,8 @@ frontend/.env.production
 
 # Eval script
 run_eval_groq.py
+
+# Ingestion — cached source HTML (regenerable) and your real source list
+# (manifest.example.json is the template and stays tracked)
+backend/data/sources/raw/
+backend/data/sources/manifest.json

@@ -1,0 +1,68 @@
+{
+  "_comment": [
+    "Copy this file to manifest.json and replace the sources list with your URLs.",
+    "",
+    "chunk_tokens/overlap_tokens are counted with the embedding model's own",
+    "tokenizer (BAAI/bge-small-en-v1.5). 512 is the model's hard ceiling.",
+    "",
+    "Per-source keys override the defaults block. Only 'url', 'topic' and",
+    "'category' are required; everything else falls back to defaults.",
+    "",
+    "'category' is the fallback for sections whose heading does not map to a",
+    "category. Set infer_category_from_heading to false to force every chunk",
+    "from a page into the declared category.",
+    "",
+    "Valid topics:     Hair Health, Weight Loss, Muscle Building, Nutrition,",
+    "                  Skin Health, Cardiovascular Health, Digestive Health,",
+    "                  Sleep, Hormones, General Wellness",
+    "Valid categories: Causes, Symptoms, Diagnosis, Prevention, Treatment,",
+    "                  Nutrition, Exercise, Supplements, Lifestyle, Research",
+    "Valid source_types: government_health_portal, clinical_guideline,",
+    "                  systematic_review, meta_analysis, clinical_trial,",
+    "                  review_article, position_stand, reference_standard"
+  ],
+
+  "chunk_tokens": 512,
+  "overlap_tokens": 50,
+
+  "defaults": {
+    "source_type": "government_health_portal",
+    "publisher": "MedlinePlus (U.S. National Library of Medicine)",
+    "infer_category_from_heading": true
+  },
+
+  "sources": [
+    {
+      "url": "https://medlineplus.gov/hairloss.html",
+      "topic": "Hair Health",
+      "category": "Causes",
+      "subtopic_prefix": "Hair Loss"
+    },
+    {
+      "url": "https://medlineplus.gov/howtoloseweightsafely.html",
+      "topic": "Weight Loss",
+      "category": "Lifestyle",
+      "subtopic_prefix": "Losing Weight Safely"
+    },
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminD-Consumer/",
+      "topic": "Nutrition",
+      "category": "Supplements",
+      "subtopic_prefix": "Vitamin D",
+      "publisher": "NIH Office of Dietary Supplements",
+      "extra_tags": ["vitamin d"]
+    },
+    {
+      "url": "https://medlineplus.gov/highbloodpressure.html",
+      "topic": "Cardiovascular Health",
+      "category": "Prevention",
+      "subtopic_prefix": "High Blood Pressure"
+    },
+    {
+      "url": "https://medlineplus.gov/healthysleep.html",
+      "topic": "Sleep",
+      "category": "Lifestyle",
+      "subtopic_prefix": "Healthy Sleep"
+    }
+  ]
+}

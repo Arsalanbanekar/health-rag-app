@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { queryHealthStream, getHealthStatus, getDomains } from './api';
 import { supabase } from './supabase';
 import Auth from './Auth';
@@ -538,7 +539,18 @@ export default function App() {
                       <div className="message-content">
                         <div className={`message-bubble ${msg.isError ? 'ood-message' : ''}`}>
                           {msg.role === 'assistant' ? (
-                            <ReactMarkdown>{msg.content}</ReactMarkdown>
+                            <ReactMarkdown
+                              remarkPlugins={[remarkGfm]}
+                              components={{
+                                table: ({ children }) => (
+                                  <div className="table-scroll">
+                                    <table>{children}</table>
+                                  </div>
+                                ),
+                              }}
+                            >
+                              {msg.content}
+                            </ReactMarkdown>
                           ) : (
                             msg.content
                           )}

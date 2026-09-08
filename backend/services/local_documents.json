@@ -1,191 +1,975 @@
 [
   {
     "topic": "Hair Health",
-    "subtopic": "Causes of Hair Loss",
-    "content": "Hair loss (alopecia) affects approximately 50% of men by age 50 and 25% of women by age 50. The most common type is androgenetic alopecia (male/female pattern baldness), which is caused by genetic sensitivity to DHT (dihydrotestosterone). DHT shrinks hair follicles over time, shortening the growth (anagen) phase from 3-5 years to weeks. Other causes include: telogen effluvium (stress-induced, usually recovers in 6-12 months), alopecia areata (autoimmune, patchy loss), nutritional deficiencies (iron, zinc, biotin, vitamin D), thyroid disorders, medications, and traction alopecia from tight hairstyles. Risk factors: family history, age, significant weight loss, stress, poor nutrition, smoking.",
-    "source": "Journal of the American Academy of Dermatology",
+    "subtopic": "Hair Problems — Hair Problems",
+    "content": "The average person has 5 million hairs. Hair grows all over your body except on your lips, palms, and the soles of your feet. It takes about a month for healthy hair to grow half an inch. Most hairs grow for up to six years and then fall out. New hairs grow in their place. Hair helps keep you warm. It also protects your eyes, ears and nose from small particles in the air. Common problem with the hair and scalp include hair loss , infections, and flaking .",
+    "category": "Causes",
+    "tags": [
+      "alopecia",
+      "hair follicle",
+      "immunity"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/hairproblems.html",
     "credibility_score": 0.95,
-    "evidence_level": "systematic_review",
+    "evidence_level": "government_health_resource",
     "id": "local-doc-1"
   },
   {
     "topic": "Hair Health",
-    "subtopic": "Minoxidil Treatment",
-    "content": "Minoxidil (Rogaine) is an FDA-approved topical treatment for androgenetic alopecia. It works by prolonging the anagen (growth) phase of hair follicles and increasing blood flow to the scalp. Available as 2% and 5% solutions/foam, applied twice daily. Clinical data: approximately 60% of users see hair regrowth or stop hair loss progression after 4-6 months. Best for crown and vertex thinning. Side effects: scalp irritation (7-10%), unwanted facial hair in women, initial shedding (first 2-8 weeks, temporary), rare cardiac effects. Must be used continuously — stopping leads to resumed hair loss within 3-6 months. Cost: approximately $10-20/month. Can be combined with finasteride for enhanced results. Not effective for completely bald areas.",
-    "source": "Dermatologic Therapy, PubMed ID: 31456329",
+    "subtopic": "Androgenetic alopecia — Description",
+    "content": "Androgenetic alopecia is a common form of hair loss in both men and women. In men, it is also known as male pattern baldness, and in women, it is also known as female pattern hair loss. In men, hair is lost in a well-defined pattern, beginning above both temples. Over time, the hairline moves back (recedes) to form a characteristic \"M\" shape. Hair also thins at the top of the head (vertex or crown), often progressing to partial or complete baldness. The pattern of hair loss in women differs from male-pattern baldness. In women, the hair becomes thinner at the top of the head, and the middle part widens. The hairline does not typically recede. Androgenetic alopecia in women rarely leads to total baldness. Androgenetic alopecia in men has been associated with several other medical conditions, including coronary heart disease and enlargement of the prostate . Additionally, prostate cancer , disorders of insulin resistance (such as diabetes and obesity), and high blood pressure ( hypertension ) have been related to androgenetic alopecia. In women, this form of hair loss is associated with an increased risk of polycystic ovary syndrome (PCOS). PCOS is characterized by a hormonal imbalance that can lead to irregular menstruation, acne, excess hair elsewhere on the body (hirsutism), and weight gain.",
+    "category": "Causes",
+    "tags": [
+      "alopecia",
+      "hair follicle",
+      "acne",
+      "blood pressure",
+      "cvd",
+      "insulin",
+      "obesity",
+      "testosterone"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/genetics/condition/androgenetic-alopecia/",
     "credibility_score": 0.95,
-    "evidence_level": "clinical_trial",
+    "evidence_level": "government_health_resource",
     "id": "local-doc-2"
   },
   {
     "topic": "Hair Health",
-    "subtopic": "Finasteride Treatment",
-    "content": "Finasteride (Propecia) is an oral prescription medication that blocks 5-alpha-reductase, the enzyme that converts testosterone to DHT. By reducing scalp DHT by ~70%, it slows or reverses hair loss in men with androgenetic alopecia. Clinical data: 88% of men stop further hair loss, 66% see regrowth after 2 years of use. Dose: 1mg daily (oral). Results visible in 3-6 months, peak at 1-2 years. Side effects: sexual dysfunction (decreased libido, erectile dysfunction) in 1-2% of users — usually reversible on discontinuation. Post-finasteride syndrome is debated but reported by some users. Not approved for women of childbearing age (teratogenic). Cost: $15-30/month. Often combined with minoxidil for superior results.",
-    "source": "New England Journal of Medicine, PubMed ID: 10456942",
-    "credibility_score": 0.96,
-    "evidence_level": "clinical_trial",
+    "subtopic": "Androgenetic alopecia — Frequency",
+    "content": "Androgenetic alopecia affects an estimated 50 million men and 30 million women in the United States. Androgenetic alopecia can start as early as a person's teens, and the risk increases with age; more than 50 percent of men over age 50 have some degree of hair loss. In women, hair loss is most likely after menopause.",
+    "category": "Causes",
+    "tags": [
+      "alopecia",
+      "hair follicle",
+      "testosterone"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/genetics/condition/androgenetic-alopecia/",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-3"
   },
   {
     "topic": "Hair Health",
-    "subtopic": "Nutrition for Hair Growth",
-    "content": "Hair is primarily made of keratin protein. Essential nutrients for hair health: Protein (1.2-1.6g/kg body weight daily — sources: eggs, chicken, fish, legumes). Biotin (vitamin B7): 30-100mcg/day, found in eggs, nuts, salmon. Deficiency causes brittle hair. Zinc: 8-11mg/day — critical for hair tissue growth and repair, found in oysters, beef, pumpkin seeds. Iron: 8-18mg/day depending on age and sex — ferritin levels below 40ng/mL linked to hair loss, found in red meat, spinach, lentils. WARNING: excess iron supplementation is harmful — get blood work first. Vitamin D: 1000-4000 IU/day — deficiency strongly linked to alopecia areata, source: sunlight, fatty fish. Omega-3 fatty acids: reduce scalp inflammation, found in salmon, walnuts, flaxseed. Vitamin E: antioxidant protection of follicles, found in almonds, sunflower seeds. Avoid: excessive vitamin A (can cause hair loss), crash diets (trigger telogen effluvium), excessive sugar (increases DHT).",
-    "source": "Dermatology Practical & Conceptual Journal",
-    "credibility_score": 0.9,
-    "evidence_level": "review_article",
+    "subtopic": "Androgenetic alopecia — Causes",
+    "content": "A variety of genetic and environmental factors likely play a role in causing androgenetic alopecia. Although researchers are studying risk factors that may contribute to this condition, most of these factors remain unknown. Researchers have determined that this form of hair loss, particularly in men, is related to hormones called androgens, specifically an androgen called dihydrotestosterone (DHT). Androgens play a role in female pattern hair loss, but other factors that are not yet known are also involved. Androgens are important for normal male sexual development before birth and during puberty. Androgens also have other important functions in both males and females, such as regulating hair growth and sex drive. Hair growth begins under the skin in structures called follicles . Each strand of hair normally grows for 2 to 6 years, goes into a resting phase for several months, and then falls out. The cycle starts over when the follicle begins growing a new hair. Androgens help control this cycle. However, too much stimulation of hair follicles by androgens may lead to a shorter growth period, resulting in shorter and thinner strands of hair. The growth of new hair to replace strands that are shed is also delayed. Together, these changes lead to hair thinning or loss. Researchers suspect that variants (also called mutations) in several genes play a role in androgenetic alopecia. However, scientific studies have confirmed only that variations in one gene, the AR gene, are involved in this condition. The AR gene provides instructions for making a protein called an androgen receptor. Androgen receptors allow the body to respond appropriately to DHT and other androgens. Studies suggest that variations in the AR gene result in androgen receptors that are more easily stimulated by androgens than normal, leading to increased activity of the receptors in hair follicles. It remains unclear, however, how these genetic changes increase the risk of hair loss in men and women with androgenetic alopecia. Researchers continue to investigate the connection between androgenetic alopecia and other medical conditions, such as coronary heart disease and prostate cancer in men and polycystic ovary syndrome in women. They believe that some of these disorders may be associated with elevated androgen levels, which may help explain why they tend to occur with androgen-related hair loss. AR",
+    "category": "Causes",
+    "tags": [
+      "alopecia",
+      "hair follicle",
+      "cvd",
+      "dht",
+      "protein",
+      "testosterone"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/genetics/condition/androgenetic-alopecia/",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-4"
   },
   {
-    "topic": "Weight Management",
-    "subtopic": "Safe Weight Loss Science",
-    "content": "Sustainable weight loss is based on energy balance: consuming fewer calories than you burn (caloric deficit). Safe rate: 0.5-1kg per week, requiring a 500-750 calorie daily deficit. Total daily energy expenditure (TDEE) = Basal Metabolic Rate (BMR) × Activity Factor. For most adults, BMR is 1400-2000 calories. Macronutrient recommendations during a cut: Protein 1.6-2.2g/kg (preserves muscle), Fat 0.8-1g/kg (hormonal health), Carbs fill remaining calories. Evidence shows high-protein diets have better adherence, more fat loss, and better muscle retention. Crash diets (<1200 cal) cause muscle loss, metabolic adaptation, nutrient deficiencies, and almost always lead to rebound weight gain. Weight loss plateaus are normal at 6-8 weeks — reduce intake by 100-200 cal or increase activity. Expected timeline: weeks 1-2 see 1-3kg (mostly water), weeks 3+ see 0.5-0.75kg/week of true fat loss.",
-    "source": "International Journal of Obesity",
-    "credibility_score": 0.93,
-    "evidence_level": "meta_analysis",
+    "topic": "Hair Health",
+    "subtopic": "Androgenetic alopecia — Inheritance",
+    "content": "The inheritance pattern of androgenetic alopecia is unclear, because many genetic and environmental factors are likely to be involved. This condition tends to cluster in families, however, and having a close relative with patterned hair loss appears to be a risk factor for developing the condition.",
+    "category": "Causes",
+    "tags": [
+      "alopecia",
+      "hair follicle",
+      "testosterone"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/genetics/condition/androgenetic-alopecia/",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-5"
   },
   {
-    "topic": "Weight Management",
-    "subtopic": "Meal Planning for Fat Loss",
-    "content": "A sustainable fat loss meal plan focuses on high-satiety, nutrient-dense foods. Example 2000 calorie plan: Breakfast (450 cal): 3 eggs scrambled + whole grain toast + avocado quarter. Snack (150 cal): Greek yogurt (150g) + berries. Lunch (600 cal): grilled chicken breast (200g) + brown rice (150g cooked) + roasted vegetables (broccoli, peppers) + olive oil drizzle. Snack (100 cal): apple + 15 almonds. Dinner (700 cal): baked salmon (180g) + sweet potato (200g) + large mixed salad + olive oil dressing. Key principles: eat protein at every meal (30-40g per meal), fill half your plate with vegetables, drink 2-3L water daily, limit liquid calories (soda, juice, alcohol), meal prep to avoid impulsive eating, eat slowly (20+ minutes per meal). Foods to minimize: ultra-processed foods, sugary drinks, deep-fried foods, white bread/pasta (choose whole grain instead).",
-    "source": "Academy of Nutrition and Dietetics",
-    "credibility_score": 0.88,
-    "evidence_level": "clinical_guideline",
+    "topic": "Weight Loss",
+    "subtopic": "Weight Control — Why is weight control important?",
+    "content": "If you are struggling with your weight, you are not alone. In the United States, more than 70 percent of adults are overweight or have obesity . Having this extra weight raises your risk for many health conditions, such as type 2 diabetes , heart disease , kidney disease , and certain cancers. Reaching and staying at a healthy weight can be challenging. But having a healthy lifestyle, including healthy eating patterns and regular physical activity, can help you lose weight. It can also lower your chance of developing weight-related health conditions.",
+    "category": "Causes",
+    "tags": [
+      "fat loss",
+      "dieting",
+      "cvd",
+      "exercise",
+      "insulin",
+      "obesity"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/weightcontrol.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-6"
   },
   {
-    "topic": "Weight Management",
-    "subtopic": "Intermittent Fasting",
-    "content": "Intermittent fasting (IF) is a dietary pattern cycling between eating and fasting periods. Common protocols: 16:8 (16h fast, 8h eating window — most popular), 5:2 (eat normally 5 days, restrict to 500-600 cal for 2 non-consecutive days), Eat-Stop-Eat (24h fast 1-2x/week). Research findings: IF is not superior to continuous calorie restriction for weight loss — the benefit is easier adherence for some people. Benefits: may improve insulin sensitivity, reduce inflammation markers, increase autophagy (cellular cleanup). Drawbacks: not suitable for pregnant/breastfeeding women, people with eating disorders, type 1 diabetes, or underweight individuals. Can increase cortisol if done excessively. Common mistake: overeating in the eating window — you still need a caloric deficit. Best approach: start with 14:10 and gradually increase fasting window.",
-    "source": "New England Journal of Medicine, DOI: 10.1056/NEJMra1905136",
-    "credibility_score": 0.94,
-    "evidence_level": "review_article",
+    "topic": "Weight Loss",
+    "subtopic": "Weight Control — What factors affect weight and health?",
+    "content": "You gain weight when you take in more calories (through food and drinks) than you use up from physical activity and daily living. But there are many different factors that can affect weight gain, such as: The world around you. Your home, community, and workplace all may affect how you make daily lifestyle choices. For example: It is often easier to find food and beverages high in calories, sugar, and fat . For instance, vending machines, cafeterias, and special events may not offer healthy, lower calorie options. Less healthy foods may be cheaper than healthier foods. Many people are getting less physical activity because they are spending more time using smartphones and other devices. It is often easier to find food and beverages high in calories, sugar, and fat . For instance, vending machines, cafeterias, and special events may not offer healthy, lower calorie options. Less healthy foods may be cheaper than healthier foods. Many people are getting less physical activity because they are spending more time using smartphones and other devices. Families. Overweight and obesity tend to run in families. This suggests that genes may play a role in weight gain. Families may also share eating and lifestyle habits. For example, some families may often have foods and drinks that are high in calories, sugar, and fat. And some families may tend to be less active and spend more time doing things like sitting and watching TV or using computers. Not enough sleep. People who don't get enough sleep may eat more calories and snack more. Emotions. Some people eat when they feel bored, sad, or stressed, even if they are not hungry. Medicines and health conditions. Taking certain medicines, such as steroids and certain antidepressants , can lead to weight gain. Some chronic health problems can also cause you to gain weight. A few examples are Cushing's syndrome and polycystic ovary syndrome (PCOS).",
+    "category": "Nutrition",
+    "tags": [
+      "fat loss",
+      "dieting",
+      "exercise",
+      "obesity",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/weightcontrol.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-7"
   },
   {
-    "topic": "Weight Management",
-    "subtopic": "Exercise for Weight Loss",
-    "content": "Exercise alone typically produces modest weight loss (2-3kg over 6 months) without dietary changes, but is critical for maintaining weight loss and body composition. Optimal approach combines: Strength training (3-4x/week): preserves and builds muscle during calorie deficit, increases resting metabolic rate by 50-100 cal/day, targets: compound movements (squats, deadlifts, bench press, rows). Cardio (2-3x/week, 30-45 min): moderate intensity (Zone 2, can hold a conversation), options: brisk walking, cycling, swimming, elliptical. Burns 200-400 cal/session. HIIT (1-2x/week, 15-20 min): 30 sec all-out effort, 30-60 sec rest. Higher calorie burn per minute, EPOC (excess post-exercise oxygen consumption) burns extra calories for 24-48h. NEAT (Non-Exercise Activity Thermogenesis): walking, standing, fidgeting — can account for 200-800 cal/day. Aim for 8000-12000 steps daily. Warning: don't compensate by eating more after exercise — a common mistake.",
-    "source": "American College of Sports Medicine Guidelines",
-    "credibility_score": 0.92,
-    "evidence_level": "clinical_guideline",
+    "topic": "Weight Loss",
+    "subtopic": "Weight Control — How can I get to and stay at a healthy weight?",
+    "content": "Getting to and staying at a healthy weight involves finding a balance of food and activity. To lose weight, you need to take in fewer calories than you use up. Some ways to do this are: Eating more nutrient-rich foods, such as foods with lots of vitamins , minerals , and fiber . Eating and drinking less of the foods and beverages that have lots of calories, salt , sugar, and fat. Limiting alcohol . Finding healthier ways to cook, such as using healthier oils to cook with and baking or grilling instead of frying foods. Getting more physical activity . The general recommendation is for adults to get 150 minutes of physical activity each week. This time can be broken down into short bursts of activity throughout your day. Types of physical activity include: Aerobic activity, which is also called cardio. It uses your large muscle groups (chest, legs, and back) to speed up your heart rate and breathing. Muscle-strengthening activity, which is also called strength training. It works your muscles by making you push or pull against something. Aerobic activity, which is also called cardio. It uses your large muscle groups (chest, legs, and back) to speed up your heart rate and breathing. Muscle-strengthening activity, which is also called strength training. It works your muscles by making you push or pull against something. You may decide to do these lifestyle changes on your own, or you may decide to try a weight-loss diet or program. Before you start, it's important to check with your health care provider first. Your provider can tell you what a healthy weight is for you, help you set goals, and give you tips on how to lose weight.",
+    "category": "Nutrition",
+    "tags": [
+      "fat loss",
+      "dieting",
+      "cardio",
+      "exercise",
+      "fiber",
+      "lifting"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/weightcontrol.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-8"
   },
   {
-    "topic": "Muscle Building",
-    "subtopic": "Progressive Overload Fundamentals",
-    "content": "Progressive overload is the foundational principle of muscle growth (hypertrophy). The body only builds new muscle when presented with a stimulus that exceeds what it's adapted to. Methods: increase weight (add 2.5-5kg when you can complete all sets/reps), increase reps (work within 6-12 rep range for hypertrophy, 1-5 for strength), increase sets (10-20 sets per muscle group per week is optimal), improve form (better mind-muscle connection). Training split recommendations: Beginners (0-1 year): Full body 3x/week. Intermediate (1-3 years): Upper/Lower 4x/week or Push/Pull/Legs. Advanced (3+ years): PPL 6x/week or specialized splits. Key compounds: Squat (quads, glutes), Deadlift (posterior chain), Bench Press (chest, triceps, front delts), Overhead Press (shoulders), Rows (back, biceps), Pull-ups (lats, biceps). Rest between sets: 2-3 minutes for compounds, 1-2 minutes for isolation. Deload every 4-8 weeks (reduce volume/intensity by 40-50%).",
-    "source": "Journal of Strength and Conditioning Research",
-    "credibility_score": 0.93,
-    "evidence_level": "systematic_review",
+    "topic": "Weight Loss",
+    "subtopic": "Weight Control — What are weight management medicines?",
+    "content": "If making lifestyle changes or doing a weight-loss program are not enough to help you lose weight, your provider may prescribe medicines. These medicines are meant to help people who have weight-related health conditions and should be used along with healthy eating and physical activity. The prescription medicines to treat overweight and obesity work in different ways. Some may help you feel less hungry or full sooner. Others may make it harder for your body to absorb fat from the foods you eat. Another treatment is weight loss surgery . Your provider may recommend the surgery if you have severe obesity or serious obesity-related health problems and you have not been able to lose enough weight.",
+    "category": "Treatment",
+    "tags": [
+      "fat loss",
+      "dieting",
+      "exercise",
+      "obesity"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/weightcontrol.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-9"
   },
   {
-    "topic": "Muscle Building",
-    "subtopic": "Protein Requirements and Timing",
-    "content": "Protein is the primary macronutrient for muscle protein synthesis (MPS). Optimal intake for muscle building: 1.6-2.2g per kg body weight per day. Above 2.2g/kg provides diminishing returns. Distribution: spread across 3-5 meals, 30-50g per meal (maximizes MPS per meal). Timing: consuming protein within 2h post-workout is beneficial but the 'anabolic window' is wider than previously thought — total daily intake matters more. Best sources by biological value: whey protein (fast absorbing, ideal post-workout), eggs (complete amino acid profile), chicken breast (lean, 31g protein per 100g), salmon (protein + omega-3), Greek yogurt (20g per cup), cottage cheese (slow digesting, good before bed), lentils/chickpeas (plant-based, combine with grains for complete amino acids). Leucine threshold: 2.5-3g leucine per meal triggers MPS — whey, eggs, and chicken are rich in leucine. For vegans, combine multiple protein sources and consider supplementing with BCAAs.",
-    "source": "British Journal of Sports Medicine, DOI: 10.1136/bjsports-2017-097608",
+    "topic": "Weight Loss",
+    "subtopic": "Weight Control — How can I maintain my weight loss?",
+    "content": "Maintaining weight loss can be challenging, and it's normal to slip back into old habits sometimes. The key is to keep a healthy balance of food and activity that works for you. Checking your weight regularly can help you notice small changes early and stay on track. And if you have a setback, don't be discouraged, simply refocus on your healthy habits and keep going. NIH: National Institute of Diabetes and Digestive and Kidney Diseases",
+    "category": "Lifestyle",
+    "tags": [
+      "fat loss",
+      "dieting",
+      "insulin"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/weightcontrol.html",
     "credibility_score": 0.95,
-    "evidence_level": "meta_analysis",
+    "evidence_level": "government_health_resource",
     "id": "local-doc-10"
   },
   {
-    "topic": "Muscle Building",
-    "subtopic": "Supplement Science — Creatine",
-    "content": "Creatine monohydrate is the most studied and effective supplement for strength and muscle gains. Mechanism: increases phosphocreatine stores in muscles, providing more ATP for high-intensity efforts. Benefits: 5-15% increase in strength, 1-2kg lean mass gain in first month (water retention + muscle), enhanced recovery between sets. Dosing: 5g daily (no loading phase necessary), take any time of day with water. Loading protocol (optional): 20g/day split into 4 doses for 5-7 days, then 5g/day maintenance. Safety: extensively studied for 30+ years, safe for healthy adults long-term. No kidney damage in healthy individuals (debunked myth). May slightly increase creatinine levels (not the same as creatinine from kidney damage). Responders vs non-responders: ~30% of people are 'non-responders' (already have high natural creatine stores). Cost: ~$10-15/month. Buy creatine MONOHYDRATE specifically — other forms (HCl, ethyl ester) are not more effective despite higher prices.",
-    "source": "International Society of Sports Nutrition Position Stand",
-    "credibility_score": 0.96,
-    "evidence_level": "position_stand",
+    "topic": "Weight Loss",
+    "subtopic": "Diets — Diets",
+    "content": "If you are overweight or have obesity , losing weight can improve your health. It might also help you prevent weight-related diseases, such as heart disease, diabetes, arthritis and some cancers. A healthy diet is an important part of a weight-loss program. It: May include fruits, vegetables, whole grains, and fat-free or low-fat milk and milk products May include lean meats, poultry, fish, beans, eggs and nuts Goes easy on saturated fats, trans fat, cholesterol, salt (sodium), and added sugars The key to losing weight is to burn more calories than you eat and drink. A diet can help you to do this through portion control. There are many different types of diets. Some, like the Mediterranean diet, describe a traditional way of eating from a specific region. Others, like the DASH eating plan or a diet to lower cholesterol , were designed for people who have certain health problems. But they may also help you to lose weight. There are also fad or crash diets that severely restrict calories or the types of food you are allowed to eat. They may sound promising, but they rarely lead to permanent weight loss. They also may not provide all of the nutrients your body needs. In addition to a diet, adding exercise into your daily life can help you to lose weight. NIH: National Institute of Diabetes and Digestive and Kidney Diseases",
+    "category": "Nutrition",
+    "tags": [
+      "fat loss",
+      "dieting",
+      "cholesterol",
+      "cvd",
+      "exercise",
+      "insulin",
+      "obesity"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/diets.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-11"
   },
   {
-    "topic": "Hormones",
-    "subtopic": "Natural Testosterone Optimization",
-    "content": "Testosterone naturally declines ~1-2% per year after age 30. Normal range: 300-1000 ng/dL for men. Evidence-based methods to optimize naturally: SLEEP (most critical): 7-9 hours/night, sleeping <5h reduces testosterone by 15%. Maintain consistent sleep schedule. EXERCISE: resistance training increases testosterone acutely and chronically — compound movements with heavy loads are best. Excessive endurance exercise (overtraining) can DECREASE testosterone. NUTRITION: adequate calories (severe deficit drops T levels), sufficient fat intake (0.8-1g/kg — cholesterol is a T precursor), zinc (11mg/day — found in oysters, beef, pumpkin seeds), vitamin D (2000-4000 IU if deficient), magnesium (400-420mg/day — found in dark chocolate, avocado, almonds). LIFESTYLE: manage stress (cortisol is inversely related to testosterone), maintain healthy body fat (15-20% for men), avoid excess alcohol (3+ drinks significantly suppress T), avoid BPA in plastics, cold showers (limited evidence but no harm). WHAT DOESN'T WORK: most 'testosterone booster' supplements are scams — tribulus, fenugreek, ashwagandha have minimal evidence at best.",
-    "source": "Journal of Clinical Endocrinology & Metabolism",
-    "credibility_score": 0.91,
-    "evidence_level": "review_article",
+    "topic": "Muscle Building",
+    "subtopic": "Exercise and Physical Fitness — What are the basics of exercise and physical fitness?",
+    "content": "Exercise is anything that gets your body moving. Regular exercise is one of the best things you can do for your health. It has many benefits , including improving your overall health and fitness, and reducing your risk for many chronic (long-term) diseases. Every physical fitness routine is built on a few simple ideas. These include: Make exercise a habit, as your body adapts to the type of activity you do most often. Regular practice will help you improve. Build up your activity level slowly to help you continue to get stronger, faster, or more flexible without pushing too hard all at once. Challenge yourself by lifting slightly heavier weights, adding a few more minutes to your walk, or increasing your pace. Mix up your workouts to keep things interesting and help prevent injuries or burnout. Show up regularly, even for short sessions, to help you continue to make progress.",
+    "category": "Exercise",
+    "tags": [
+      "hypertrophy",
+      "lifting",
+      "exercise",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/exerciseandphysicalfitness.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-12"
   },
   {
-    "topic": "Hormones",
-    "subtopic": "Thyroid Health and Metabolism",
-    "content": "The thyroid gland controls metabolism via T3 (triiodothyronine) and T4 (thyroxine) hormones. Hypothyroidism (underactive): affects 5% of the population, causes fatigue, weight gain, cold intolerance, brain fog, hair loss, constipation, dry skin, depression. Diagnosis: TSH >4.5 mIU/L (elevated), low free T4. Treatment: levothyroxine (synthetic T4), taken on empty stomach in morning. Hyperthyroidism (overactive): causes weight loss, anxiety, rapid heart rate, heat intolerance, tremors, insomnia. Diagnosis: TSH <0.4 mIU/L (suppressed), elevated free T4. Treatment: methimazole, radioactive iodine, or surgery. Nutritional support: iodine (150mcg/day from iodized salt, seaweed, fish — but excess iodine can worsen thyroid disease), selenium (55-200mcg/day from Brazil nuts — supports T4 to T3 conversion), zinc, vitamin D. Avoid: soy in excess (may interfere with thyroid medication absorption), cruciferous vegetables in extremely large raw quantities. Blood tests to request: TSH, free T3, free T4, thyroid antibodies (TPO-Ab, TG-Ab).",
-    "source": "American Thyroid Association Clinical Guidelines",
+    "topic": "Muscle Building",
+    "subtopic": "Exercise and Physical Fitness — What are the different types of exercise?",
+    "content": "There are many different types of exercise. Before you start, check with your health care provider, especially if you have trouble moving, balancing, or worry that exercise might not be safe for you. A few main types of exercise include: Aerobic exercises such as walking, running, or swimming are sometimes referred to as cardio. This is short for cardiovascular exercise. These exercises increase your breathing and heart rate. They keep your heart, lungs, and circulatory system healthy and improve your overall fitness. Strength, or resistance training, exercises use weights, resistance bands, or your own body weight to build stronger muscles. Balance exercises, such as tai chi or standing on one leg, improve your stability and coordination. They may make it easier for you to walk on uneven surfaces and help prevent falls . Flexibility exercises, such as stretching or yoga, help your joints move more easily and improve your posture. Most people benefit from a combination of these types of exercises. Your provider can help you choose the best type or amount of activity for you based on your fitness level and health.",
+    "category": "Exercise",
+    "tags": [
+      "hypertrophy",
+      "lifting",
+      "cardio",
+      "exercise"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/exerciseandphysicalfitness.html",
     "credibility_score": 0.95,
-    "evidence_level": "clinical_guideline",
+    "evidence_level": "government_health_resource",
     "id": "local-doc-13"
   },
   {
-    "topic": "Nutrition",
-    "subtopic": "Essential Vitamins and Deficiencies",
-    "content": "Common nutrient deficiencies that affect health: Vitamin D: ~42% of US adults are deficient. Symptoms: fatigue, bone pain, muscle weakness, depression, weak immunity. Test: 25-hydroxyvitamin D blood test. Optimal range: 30-50 ng/mL. Supplementation: 1000-4000 IU daily with fat-containing meal. Iron: most common deficiency worldwide, especially in women. Symptoms: fatigue, pale skin, shortness of breath, hair loss. Test: serum ferritin (optimal: 40-100 ng/mL for women, 50-150 ng/mL for men). Don't supplement without blood work — iron overload is dangerous. B12: common in vegans/vegetarians and elderly. Symptoms: fatigue, numbness/tingling, memory problems. Sources: meat, fish, eggs, fortified foods, or supplement 500-1000mcg. Magnesium: ~50% of Americans get below the EAR. Symptoms: muscle cramps, poor sleep, anxiety, headaches. Dose: 300-400mg/day, best forms: glycinate (sleep), citrate (general), threonate (cognitive). Omega-3: EPA and DHA from fatty fish 2-3x/week or supplement 1-2g combined EPA+DHA daily. Reduces inflammation, supports brain and heart health.",
-    "source": "National Institutes of Health — Office of Dietary Supplements",
-    "credibility_score": 0.92,
-    "evidence_level": "reference_standard",
+    "topic": "Muscle Building",
+    "subtopic": "Exercise and Physical Fitness — How can I fit exercise into my day?",
+    "content": "Fitting regular exercise into your daily schedule may seem difficult at first. But you can start slowly and break your exercise time into chunks. Even small amounts of exercise can be helpful. You can work your way up to doing the recommended amount of exercise. How much exercise you need depends on your age and health. To get started, you don't need fancy equipment, but having the right tools can make it easier and more fun. There are a variety of places where you can exercise and create a routine that fits your lifestyle. This includes: At home. Dumbbells, kettlebells, a mat, or resistance bands are versatile and affordable options for strength training and stretching. A treadmill, a stationary bike, or a workout video are a few options for indoor cardio. A fitness center, gym, or health club. These places offer equipment, classes, and sometimes personal trainers for guidance and support. Ask if you can try the center before you join, and if staff are available to show you how to use the exercise equipment. Outdoors. Try riding a bike, walking your dog, or exploring local parks and trails. Dress for the weather and protect yourself from the sun . If safety is a concern, choose a well-lit neighborhood, a busy park, or even an indoor shopping mall for your walk. Include activities that strengthen all parts of your body, especially your core, which are the muscles in your abdomen (belly), back, and hips. A strong core helps with balance and stability and can lower your risk of back injuries . If you haven't exercised in a while , start slowly and talk to your provider if you have health concerns. If you don't feel right, or have any pain, extreme shortness of breath , or dizziness , stop exercising and seek help right away.",
+    "category": "Exercise",
+    "tags": [
+      "hypertrophy",
+      "lifting",
+      "cardio",
+      "exercise"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/exerciseandphysicalfitness.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-14"
   },
   {
-    "topic": "Nutrition",
-    "subtopic": "Supplement Safety and Effectiveness",
-    "content": "Evidence-based supplements ranked by research quality: TIER 1 — Strong evidence: Creatine monohydrate (strength, muscle), Vitamin D (if deficient), Omega-3 (inflammation, heart), Protein powder (convenience, hitting targets), Caffeine (performance, 3-6mg/kg). TIER 2 — Moderate evidence: Magnesium (sleep, recovery), Zinc (immunity, testosterone support if deficient), Ashwagandha (stress, cortisol reduction — 300-600mg KSM-66), Melatonin (sleep onset, 0.5-3mg), Probiotics (gut health — strain-specific). TIER 3 — Weak/insufficient evidence: BCAAs (unnecessary if protein intake is adequate), glutamine (minimal benefit for healthy people), testosterone boosters (mostly ineffective), collagen (limited absorption evidence), greens powders (not a substitute for vegetables). RED FLAGS — Avoid: proprietary blends (hide dosages), claims of 'miracle results', products without third-party testing (look for NSF, Informed Sport, USP labels), mega-doses exceeding tolerable upper limits. General rule: supplements complement a good diet, they don't replace it.",
-    "source": "Examine.com Evidence-Based Supplement Guide",
-    "credibility_score": 0.9,
-    "evidence_level": "review_article",
+    "topic": "Muscle Building",
+    "subtopic": "Exercise and Physical Fitness — How can I stay motivated?",
+    "content": "Even with the best intentions, it's easy to fall off track. Here are some ways to keep going: Choose activities you enjoy. It's easier to make exercise a regular part of your life if you have fun doing it. Exercise safely . Use the proper equipment to prevent injuries , listen to your body, and don't overdo it. Give yourself goals. Your goals should be challenging, but realistic. It may be helpful to reward yourself when you reach them. The rewards could be something big, like new workout gear, or something smaller, such as a new water bottle or movie tickets. Mix it up. Try a new class, playlist, Podcast, or outdoor route when things get stale. Find an accountability partner. Exercise with a friend, join a group challenge, or check in with an online community. Use wearable technology. A pedometer or an app like a fitness tracker on your phone or other device can help you track your progress.",
+    "category": "Exercise",
+    "tags": [
+      "hypertrophy",
+      "lifting",
+      "exercise"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/exerciseandphysicalfitness.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-15"
   },
   {
-    "topic": "Sleep & Recovery",
-    "subtopic": "Sleep Optimization for Health",
-    "content": "Sleep is arguably the most important health behavior. Adults need 7-9 hours per night. Chronic sleep deprivation (<6h) increases risk of: obesity (+55%), type 2 diabetes (+48%), cardiovascular disease (+45%), depression (+300%), weakened immunity (4x more likely to catch cold). Sleep optimization: ENVIRONMENT: cool room (65-68°F / 18-20°C), pitch dark (blackout curtains or eye mask), quiet (earplugs or white noise). TIMING: consistent bedtime within 30 min every day including weekends (stabilizes circadian rhythm). HABITS: no caffeine within 8-10 hours of bedtime, no alcohol within 3 hours (disrupts REM sleep despite feeling sedating), no screens 1h before bed (blue light suppresses melatonin — or use night mode), bright light exposure in the morning (10-15 min of sunlight sets circadian clock). SUPPLEMENTS: melatonin 0.5-3mg (30 min before bed — more is not better), magnesium glycinate 200-400mg (relaxation), L-theanine 200mg (anxiolytic without drowsiness).",
-    "source": "National Sleep Foundation + Matthew Walker, Why We Sleep",
-    "credibility_score": 0.91,
-    "evidence_level": "review_article",
+    "topic": "Nutrition",
+    "subtopic": "Carbohydrates — What are carbohydrates?",
+    "content": "Carbohydrates, or carbs, are sugar molecules. Along with proteins and fats , carbohydrates are one of three main nutrients found in foods and drinks. Your body breaks down carbohydrates into glucose. Glucose, or blood sugar , is the main source of energy for your body's cells, tissues, and organs. Glucose can be used immediately or stored in the liver and muscles for later use.",
+    "category": "Nutrition",
+    "tags": [
+      "macros",
+      "protein",
+      "insulin"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/carbohydrates.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-16"
   },
   {
-    "topic": "Stress & Mental Health",
-    "subtopic": "Stress Management and Cortisol",
-    "content": "Chronic stress elevates cortisol, leading to: increased abdominal fat storage, muscle breakdown, weakened immunity, poor sleep, reduced testosterone, hair loss (telogen effluvium), impaired digestion, elevated blood pressure, brain fog/memory issues. Evidence-based stress management: EXERCISE: 30-45 min of moderate activity 4-5x/week reduces cortisol by 15-25%. MEDITATION: 10-20 min daily mindfulness meditation reduces cortisol by 20-25% (validated in multiple RCTs). BREATHING: physiological sigh (double inhale through nose + long exhale through mouth) reduces stress in real-time (Stanford research). NATURE: 20 min in nature ('forest bathing') reduces cortisol by 12-16%. SOCIAL CONNECTION: strong relationships are the #1 predictor of longevity and stress resilience. LIMIT NEWS/SOCIAL MEDIA: chronic doomscrolling increases anxiety. SLEEP: poor sleep is both a cause and consequence of high cortisol — prioritize it. When to seek help: persistent anxiety/depression lasting 2+ weeks, panic attacks, suicidal thoughts — see a mental health professional. Therapy (CBT) is as effective as medication for mild-moderate anxiety/depression.",
-    "source": "American Psychological Association, Psychoneuroendocrinology",
-    "credibility_score": 0.9,
-    "evidence_level": "systematic_review",
+    "topic": "Nutrition",
+    "subtopic": "Carbohydrates — What are the different types of carbohydrates?",
+    "content": "There are three main types of carbohydrates: Sugars. They are also called simple carbohydrates because they are in the most basic form. They can be added to foods, such as the sugar in candy, desserts, processed foods, and regular soda. They also include the kinds of sugar that are found naturally in fruits, vegetables, and milk. Starches. They are complex carbohydrates, which are made of lots of simple sugars strung together. Your body needs to break starches down into sugars to use them for energy. Starches include bread, cereal, and pasta. They also include certain vegetables, like potatoes, peas, and corn. Fiber . It is also a complex carbohydrate. Your body cannot break down most fibers, so eating foods with fiber can help you feel full and make you less likely to overeat. Diets high in fiber have other health benefits. They may help prevent stomach or intestinal problems, such as constipation . They may also help lower cholesterol and blood sugar. Fiber is found in many foods that come from plants, including fruits, vegetables, nuts, seeds, beans, and whole grains.",
+    "category": "Nutrition",
+    "tags": [
+      "macros",
+      "protein",
+      "cholesterol",
+      "dieting",
+      "fiber"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/carbohydrates.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-17"
   },
   {
-    "topic": "Skin Health",
-    "subtopic": "Acne Causes and Treatments",
-    "content": "Acne vulgaris affects 85% of people aged 12-24. Causes: excess sebum production (hormonal, especially androgens and DHT), clogged pores (dead skin + oil), bacterial overgrowth (C. acnes), inflammation. Treatment ladder: MILD: Benzoyl peroxide 2.5-5% (kills bacteria, use at night, start low to avoid irritation), salicylic acid 2% (BHA, unclogs pores), niacinamide 5-10% (reduces inflammation and oil production), gentle cleanser (pH 4.5-5.5, avoid harsh soaps). MODERATE: retinoids (tretinoin 0.025-0.05% — prescription, gold standard for prevention, takes 12 weeks to see results), azelaic acid 15-20% (anti-inflammatory, safe in pregnancy). SEVERE: oral antibiotics (doxycycline — short term only), isotretinoin/Accutane (for severe/cystic, cure rate 80%+, significant side effects — requires monitoring). Diet factors: high glycemic foods (sugar, white bread) worsen acne in some people, dairy (especially skim milk) associated with acne, chocolate association is weak. Lifestyle: don't pick/pop (causes scarring), change pillowcase 2x/week, use non-comedogenic products, always use sunscreen (SPF 30+).",
-    "source": "British Journal of Dermatology, AAD Guidelines",
-    "credibility_score": 0.93,
-    "evidence_level": "clinical_guideline",
+    "topic": "Nutrition",
+    "subtopic": "Carbohydrates — Which foods have carbohydrates?",
+    "content": "Common foods with carbohydrates include: Grains, such as bread, noodles, pasta, crackers, cereals, and rice Fruits, such as apples, bananas, berries, mangoes, melons, and oranges Dairy products, such as milk and yogurt Legumes, including dried beans, lentils, and peas Snack foods and sweets, such as cakes, cookies, candy, and other desserts Juices, regular sodas, fruit drinks, sports drinks, and energy drinks that contain sugar Starchy vegetables, such as potatoes, corn, and peas Some foods don't have a lot of carbohydrates, such as meat, fish, poultry, some types of cheese, nuts, and oils.",
+    "category": "Nutrition",
+    "tags": [
+      "macros",
+      "protein"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/carbohydrates.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-18"
   },
   {
-    "topic": "Gut Health",
-    "subtopic": "Microbiome and Digestive Health",
-    "content": "The gut microbiome contains 100 trillion bacteria that influence immunity, mood, metabolism, and inflammation. A diverse microbiome is associated with better health outcomes. Supporting gut health: FIBER: aim for 25-35g/day from diverse sources — vegetables, fruits, whole grains, legumes, nuts. Each type of fiber feeds different bacteria. FERMENTED FOODS: yogurt, kefir, sauerkraut, kimchi, kombucha — contain live beneficial bacteria. Studies show 6 servings/week increases microbiome diversity. PREBIOTICS: specific fibers that feed good bacteria — garlic, onions, leeks, asparagus, bananas, oats. PROBIOTICS: supplements with specific strains — Lactobacillus rhamnosus GG (diarrhea prevention), Saccharomyces boulardii (antibiotic-associated diarrhea), VSL#3 (IBS). Choose strains with clinical evidence, not just CFU count. AVOID: unnecessary antibiotics (devastate microbiome), excessive processed food (reduces diversity), artificial sweeteners (may disrupt microbiome — research ongoing), chronic stress (alters gut-brain axis). Common symptoms of poor gut health: bloating, gas, constipation/diarrhea, food sensitivities, fatigue, brain fog, skin issues.",
-    "source": "Cell Journal, Stanford Microbiome Research Center",
-    "credibility_score": 0.91,
-    "evidence_level": "review_article",
+    "topic": "Nutrition",
+    "subtopic": "Carbohydrates — Which types of carbohydrates should I eat?",
+    "content": "You do need to eat some carbohydrates to give your body energy. But it's important to eat the right kinds of carbohydrates for your health: When eating grains, choose mostly whole grains and not refined grains: Whole grains are foods like whole-wheat bread, brown rice, whole cornmeal, and oatmeal. They offer lots of nutrients that your body needs, like vitamins , minerals , and fiber. To figure out whether a product has a lot of whole grain, check the ingredients list on the package and see if a whole grain is one of the first few items listed. Refined grains are foods that have had some parts of the grains removed. This also removes some of the nutrients that are good for your health. Whole grains are foods like whole-wheat bread, brown rice, whole cornmeal, and oatmeal. They offer lots of nutrients that your body needs, like vitamins , minerals , and fiber. To figure out whether a product has a lot of whole grain, check the ingredients list on the package and see if a whole grain is one of the first few items listed. Refined grains are foods that have had some parts of the grains removed. This also removes some of the nutrients that are good for your health. Eat foods with lots of fiber. The Nutrition Facts labels on the back of food packages tells you how much fiber a product has. Try to avoid foods that have a lot of added sugar. These foods can have many calories but not much nutrition. Eating too much added sugar raises your blood sugar and can make you gain weight. You can tell if a food or drink has added sugars by looking at the Nutrition Facts label on the back of the food package. It tells you how much total sugar and added sugar is in that food or drink.",
+    "category": "Nutrition",
+    "tags": [
+      "macros",
+      "protein",
+      "fiber"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/carbohydrates.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-19"
   },
   {
-    "topic": "Heart Health",
-    "subtopic": "Cardiovascular Disease Prevention",
-    "content": "Cardiovascular disease (CVD) is the #1 cause of death globally. Key modifiable risk factors: high blood pressure (optimal: <120/80 mmHg), high LDL cholesterol (optimal: <100 mg/dL), smoking, diabetes, obesity, physical inactivity, poor diet, excessive alcohol, chronic stress. Prevention: EXERCISE: 150 min/week moderate or 75 min/week vigorous aerobic activity. Even walking 7000+ steps/day reduces CVD risk by 50-70%. DIET: Mediterranean diet is the most studied — olive oil, fish, vegetables, nuts, whole grains, limited red meat. Reduces CVD events by 30% (PREDIMED trial). Limit sodium to <2300mg/day (ideally <1500mg). Increase potassium (bananas, potatoes, leafy greens). CHOLESTEROL: statins are effective but lifestyle changes often sufficient for borderline levels. Plant sterols (2g/day) reduce LDL by 10%. Omega-3 (EPA 2-4g/day) reduces triglycerides. BLOOD PRESSURE: DASH diet, exercise, weight loss, stress management can reduce systolic BP by 10-20 mmHg. Screening: blood pressure at every doctor visit, lipid panel every 5 years starting at age 20.",
-    "source": "American Heart Association, The Lancet",
-    "credibility_score": 0.96,
-    "evidence_level": "meta_analysis",
+    "topic": "Nutrition",
+    "subtopic": "Carbohydrates — How many carbohydrates should I eat?",
+    "content": "There is no one-size-fits-all amount of carbohydrates that people should eat. This amount can vary, depending on factors such as your age, sex, health, and whether or not you are trying to lose or gain weight. On average, people should get 45 to 65% of their calories from carbohydrates every day. On the Nutrition Facts labels, the Daily Value for total carbohydrates is 275 g per day. This is based on a 2,000-calorie daily diet. Your Daily Value may be higher or lower depending on your calorie needs and health.",
+    "category": "Lifestyle",
+    "tags": [
+      "macros",
+      "protein",
+      "dieting"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/carbohydrates.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-20"
   },
   {
-    "topic": "Immunity",
-    "subtopic": "Immune System Support",
-    "content": "The immune system is a complex network. Evidence-based immune support: SLEEP: 7-9 hours — sleeping <6h makes you 4.2x more likely to catch a cold. Sleep is when immune cells are most active. EXERCISE: moderate activity (30-45 min, 5x/week) strengthens immune function. But chronic intense exercise without recovery (overtraining) suppresses immunity. NUTRITION: Vitamin C (200-1000mg/day from citrus, bell peppers, kiwi — reduces cold duration by 8% in adults), Vitamin D (2000-4000 IU if deficient — reduces respiratory infection risk by 42%), Zinc (15-30mg at cold onset — reduces duration by 33% if taken within 24h, use zinc acetate lozenges), Elderberry (standardized extract has moderate evidence for reducing cold duration). LIFESTYLE: manage stress (chronic stress weakens NK cell activity), don't smoke, limit alcohol (>2 drinks/day impairs immune response), wash hands regularly. PROBIOTICS: Lactobacillus and Bifidobacterium strains may reduce upper respiratory infections. What DOESN'T work: mega-dose vitamin C (>2g/day provides no additional benefit), most 'immune booster' supplements, detox teas.",
-    "source": "British Medical Journal, Harvard Health",
-    "credibility_score": 0.89,
-    "evidence_level": "review_article",
+    "topic": "Nutrition",
+    "subtopic": "Carbohydrates — Is it safe to eat a low-carb diet?",
+    "content": "Some people go on a low-carb diet to try to lose weight. This usually means eating between 25 g and 150 g of carbs each day. This kind of diet can be safe, but you should talk to your health care provider before starting it. One problem with low-carb diets is that they can limit the amount of fiber you get each day. They can also be hard to stay on for the long term.",
+    "category": "Nutrition",
+    "tags": [
+      "macros",
+      "protein",
+      "dieting",
+      "fiber"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/carbohydrates.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
     "id": "local-doc-21"
+  },
+  {
+    "topic": "Nutrition",
+    "subtopic": "Nutrition for Older Adults — What is nutrition and why is it important for older adults?",
+    "content": "Nutrition is about eating a healthy and balanced diet so your body gets the nutrients that it needs. Nutrients are substances in foods that our bodies need so they can function and grow. They include carbohydrates , fats , proteins , vitamins , minerals , and water. Good nutrition is important, no matter what your age. It gives you energy and can help you control your weight. It may also help prevent some diseases, such as osteoporosis , high blood pressure , heart disease , type 2 diabetes , and certain cancers. But as you age, your body and life change, and so does what you need to stay healthy. For example, you may need fewer calories, but you still need to get enough nutrients. Some older adults need more protein.",
+    "category": "Causes",
+    "tags": [
+      "macros",
+      "protein",
+      "blood pressure",
+      "cvd",
+      "dieting",
+      "insulin"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/nutritionforolderadults.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-22"
+  },
+  {
+    "topic": "Nutrition",
+    "subtopic": "Nutrition for Older Adults — What can make it harder for me to eat healthy as I age?",
+    "content": "Some changes that can happen as you age can make it harder for you to eat healthy. These include changes in your: Home life, such as suddenly living alone or having trouble getting around Health, which can make it harder for you to cook or feed yourself Medicines, which can change how food tastes, make your mouth dry, or take away your appetite Income, which means that you may not have as much money for food Sense of smell and taste Problems chewing or swallowing your food",
+    "category": "Nutrition",
+    "tags": [
+      "macros",
+      "protein"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/nutritionforolderadults.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-23"
+  },
+  {
+    "topic": "Nutrition",
+    "subtopic": "Nutrition for Older Adults — How can I eat healthy as I age?",
+    "content": "To stay healthy as you age, you should: Eat foods that give you lots of nutrients without a lot of extra calories , such as Fruits and vegetables (choose different types with bright colors) Whole grains, like oatmeal, whole-wheat bread, and brown rice Fat-free or low-fat milk and cheese, or soy or rice milk that has added vitamin D and calcium Seafood, lean meats, poultry, and eggs Beans, nuts, and seeds Fruits and vegetables (choose different types with bright colors) Whole grains, like oatmeal, whole-wheat bread, and brown rice Fat-free or low-fat milk and cheese, or soy or rice milk that has added vitamin D and calcium Seafood, lean meats, poultry, and eggs Beans, nuts, and seeds Avoid empty calories. These are foods with lots of calories but few nutrients, such as chips, candy, baked goods, soda, and alcohol. Pick foods that are low in cholesterol and fat. You especially want to try to avoid saturated and trans fats. Saturated fats are usually fats that come from animals. Trans fats are processed fats in stick margarine and vegetable shortening. You may find them in some store-bought baked goods and fried foods at some fast-food restaurants. Drink enough liquids , so you don't get dehydrated . Some people lose their sense of thirst as they age. And certain medicines might make it even more important to have plenty of fluids. Be physically active. If you have started losing your appetite, exercising may help you to feel hungrier.",
+    "category": "Nutrition",
+    "tags": [
+      "macros",
+      "protein",
+      "vitamin d",
+      "cholesterol"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/nutritionforolderadults.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-24"
+  },
+  {
+    "topic": "Nutrition",
+    "subtopic": "Nutrition for Older Adults — What can I do if I am having trouble eating healthy?",
+    "content": "Sometimes health issues or other problems can make it hard to eat healthy. Here are some tips that might help: If you are tired of eating alone, try organizing some potluck meals or cooking with a friend. You can also look into having some meals at a nearby senior center, community center, or religious facility. If you are having trouble chewing, see your dentist to check for problems If you are having trouble swallowing, try drinking plenty of liquids with your meal. If that does not help, check with your health care provider. A health condition or medicine could be causing the problem. If you're having trouble smelling and tasting your food, try adding color and texture to make your food more interesting If you aren't eating enough, add some healthy snacks throughout the day to help you get more nutrients and calories If an illness is making it harder for you to cook or feed yourself, check with your health care provider. He or she may recommend an occupational therapist, who can help you find ways to make it easier. NIH: National Institute on Aging",
+    "category": "Nutrition",
+    "tags": [
+      "macros",
+      "protein"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/nutritionforolderadults.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-25"
+  },
+  {
+    "topic": "Nutrition",
+    "subtopic": "Vitamins — Vitamins",
+    "content": "Vitamins are substances that your body needs to grow and develop normally. There are 13 vitamins your body needs. They are: Vitamin A B vitamins (thiamine, riboflavin, niacin, pantothenic acid, biotin, vitamin B-6, vitamin B-12 and folate ) Vitamin C Vitamin D Vitamin E Vitamin K You can usually get all your vitamins from the foods you eat. Your body can also make vitamins D and K. People who eat a vegetarian diet may need to take a vitamin B12 supplement. Each vitamin has specific jobs. If you have low levels of certain vitamins, you may get health problems. For example, if you don't get enough vitamin C, you could become anemic. Some vitamins may help prevent medical problems. Vitamin A prevents night blindness. The best way to get enough vitamins is to eat a balanced diet with a variety of foods. In some cases, you may need to take vitamin supplements. It's a good idea to ask your health care provider first. High doses of some vitamins can cause problems.",
+    "category": "Supplements",
+    "tags": [
+      "macros",
+      "protein",
+      "biotin",
+      "vitamin d",
+      "dieting",
+      "supplementation",
+      "vitamin c"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/vitamins.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-26"
+  },
+  {
+    "topic": "Skin Health",
+    "subtopic": "Skin Conditions — What does your skin do?",
+    "content": "Your skin is your body's largest organ. It covers the entire outside of your body. There are many ways that your skin protects your body and helps keep you healthy. For example, it: Holds body fluids in, which helps prevent you from getting dehydrated Keeps out harmful germs, which helps prevent infections Helps you feel things like heat, cold, and pain Helps control your body temperature Makes vitamin D when the sun shines on it Shields your body against heat and light",
+    "category": "Prevention",
+    "tags": [
+      "acne",
+      "immunity",
+      "vitamin d"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/skinconditions.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-27"
+  },
+  {
+    "topic": "Skin Health",
+    "subtopic": "Skin Conditions — What problems and conditions can affect your skin?",
+    "content": "There are many different problems and conditions which can affect your skin. Some of them can cause uncomfortable symptoms, such as itching , burning, redness, and rashes . They might also affect your appearance. Some of the more common skin conditions include: Acne , which causes pimples when hair follicles under your skin get clogged up Burns Cuts and scrapes Dandruff , flaking of the skin on your scalp (the top of your head) Eczema (atopic dermatitis), which causes inflammation, redness, and irritation of the skin Hives , which are red and sometimes itchy bumps on your skin Insect bites Psoriasis , which causes itchy, scaly red patches Skin cancer Skin infections",
+    "category": "Causes",
+    "tags": [
+      "acne",
+      "hair follicle",
+      "immunity"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/skinconditions.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-28"
+  },
+  {
+    "topic": "Skin Health",
+    "subtopic": "Skin Conditions — How can I keep my skin healthy?",
+    "content": "Since your skin protects your body in many ways, it's important to try to keep your skin healthy. For example, you can: Wear the right protective equipment, like gloves, long sleeves, knee and elbow pads, or helmets to protect against cuts, bumps and scrapes. If you do get a cut or scrape, clean it right away with soap and warm water. Put on a bandage to protect it while it heals. When you are spending time outdoors, wear long sleeves and pants and use insect repellant to prevent insect bites. Prevent sunburn by covering up and using sunscreen when outdoors. Wash your hands often with soap and water. When you take a shower or bath, use warm (not hot) water. Use mild cleansers and wash gently (don't scrub). Use moisturizers, like lotions, creams, or ointments, to prevent dry skin. NIH: National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+    "category": "Lifestyle",
+    "tags": [
+      "acne"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/skinconditions.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-29"
+  },
+  {
+    "topic": "Cardiovascular Health",
+    "subtopic": "Heart Diseases — What is heart disease?",
+    "content": "Heart disease is a general term that includes many types of heart problems. It's a type of cardiovascular disease, which means heart and blood vessel disease. Heart disease is the leading cause of death in the United States, but there are ways to prevent and manage many types of heart disease.",
+    "category": "Causes",
+    "tags": [
+      "cvd",
+      "blood pressure",
+      "cardio"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/heartdiseases.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-30"
+  },
+  {
+    "topic": "Cardiovascular Health",
+    "subtopic": "Heart Diseases — What are the types of heart disease?",
+    "content": "There are many different types of heart disease. Some you may be born with, called congenital heart disease . Other types develop during your lifetime. Coronary artery disease (also called coronary heart disease) is the most common type of heart disease. It happens slowly over time when a sticky substance called plaque builds up in the arteries that supply your heart muscle with blood. The plaque narrows or blocks blood flow to the heart muscle and can lead to other heart problems: Angina - chest pain from lack of blood flow Heart attacks - when part of the heart muscle dies from loss of blood flow Heart failure - when your heart can't pump enough blood to meet your body's needs Arrhythmia - a problem with the rate or rhythm of your heartbeat Other types of heart diseases may affect your heart valves or heart muscle ( cardiomyopathy ).",
+    "category": "Causes",
+    "tags": [
+      "cvd",
+      "blood pressure",
+      "cardio"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/heartdiseases.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-31"
+  },
+  {
+    "topic": "Cardiovascular Health",
+    "subtopic": "Heart Diseases — Who is more likely to develop heart diseases?",
+    "content": "There are many different factors that can make you more likely to develop heart disease. Some of these factors you can change, but others you cannot. Age. Your risk of heart disease goes up as you get older. Sex. Some factors may affect heart disease risk differently in women than in men. Family history and genetics. A family history of early heart disease raises your risk. And research has shown that some genes are linked to a higher risk of certain heart diseases. Race/ethnicity. Heart disease is the leading cause of death in most racial and ethnic groups in the United States. However, certain groups have higher risks than others. This includes Black people, White people, and American Indian/Alaska Native people. Lifestyle habits. Over time, unhealthy lifestyle habits can raise your risk of heart disease. These can include: Eating a diet high in saturated fats , refined carbohydrates, and salt . Not getting enough physical activity . Drinking too much alcohol . Smoking and exposure to secondhand smoke . Too much stress . Eating a diet high in saturated fats , refined carbohydrates, and salt . Not getting enough physical activity . Drinking too much alcohol . Smoking and exposure to secondhand smoke . Too much stress . Having other medical conditions can raise your risk of heart diseases. These conditions include: High blood pressure . High cholesterol levels . Diabetes . Obesity . Autoimmune and inflammatory diseases. Chronic kidney disease . Metabolic syndrome . High blood pressure . High cholesterol levels . Diabetes . Obesity . Autoimmune and inflammatory diseases. Chronic kidney disease . Metabolic syndrome .",
+    "category": "Causes",
+    "tags": [
+      "cvd",
+      "blood pressure",
+      "cholesterol",
+      "dieting",
+      "exercise",
+      "insulin",
+      "macros",
+      "obesity",
+      "smoking",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/heartdiseases.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-32"
+  },
+  {
+    "topic": "Cardiovascular Health",
+    "subtopic": "Heart Diseases — What are the symptoms of heart disease?",
+    "content": "Your symptoms will depend on the type of heart disease you have. You may not have symptoms at first. In some cases, you may not know you have heart disease until you have a complication such as a heart attack.",
+    "category": "Symptoms",
+    "tags": [
+      "cvd",
+      "blood pressure"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/heartdiseases.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-33"
+  },
+  {
+    "topic": "Cardiovascular Health",
+    "subtopic": "Heart Diseases — How are heart diseases diagnosed?",
+    "content": "To find out if you have heart disease, your health care provider will: Ask about your medical history , including your symptoms Ask about your family health history , including relatives who have had heart disease Do a physical exam Likely run heart tests and blood tests In some cases, your provider may refer you to a cardiologist (a doctor who specializes in heart diseases) for tests, diagnosis, and care.",
+    "category": "Diagnosis",
+    "tags": [
+      "cvd",
+      "blood pressure",
+      "cardio"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/heartdiseases.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-34"
+  },
+  {
+    "topic": "Cardiovascular Health",
+    "subtopic": "Heart Diseases — What are the treatments for heart disease?",
+    "content": "Treatment plans for heart disease depend on the type of heart disease you have, how serious your symptoms are, and what other health conditions you have. Possible treatments may include: Heart-healthy lifestyle changes Medicines Procedures or surgeries Cardiac rehabilitation",
+    "category": "Treatment",
+    "tags": [
+      "cvd",
+      "blood pressure"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/heartdiseases.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-35"
+  },
+  {
+    "topic": "Digestive Health",
+    "subtopic": "Digestive Diseases — Digestive Diseases",
+    "content": "When you eat, your body breaks food down to a form it can use to build and nourish cells and provide energy. This process is called digestion. Your digestive system is a series of hollow organs joined in a long, twisting tube. It runs from your mouth to your anus and includes your esophagus, stomach, and small and large intestines. Your liver, gallbladder and pancreas are also involved. They produce juices to help digestion. There are many types of digestive disorders. The symptoms vary widely depending on the problem. In general, you should see your doctor if you have: Blood in your stool Changes in bowel habits Severe abdominal pain Unintentional weight loss Heartburn not relieved by antacids NIH: National Institute of Diabetes and Digestive and Kidney Diseases",
+    "category": "Causes",
+    "tags": [
+      "microbiome",
+      "fiber",
+      "dieting",
+      "insulin"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/digestivediseases.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-36"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Sleep Disorders — What is sleep?",
+    "content": "While you are sleeping your brain and body functions are still active. Sleep is a natural process that helps your body restore energy, supports learning and memory, and keeps you healthy. It's not just the number of hours of sleep you get that matters. The quality of your sleep is also important. During the night, your brain cycles through different stages of non-rapid eye movement (non-REM) sleep and rapid eye movement (REM) sleep. If your sleep is often interrupted, you may not get enough time in certain stages of sleep. Poor-quality sleep does more than make you feel tired. It can affect your physical and mental health, thinking, and daily functioning.",
+    "category": "Diagnosis",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "rem",
+      "mental health"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/sleepdisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-37"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Sleep Disorders — What are sleep disorders?",
+    "content": "Sleep disorders are conditions that disturb your normal sleep patterns. There are many types of sleep disorders. Some general types include: Insomnia , which is trouble falling asleep or staying asleep. Sleep-related breathing disorders such as sleep apnea , a condition in which you stop breathing for 10 seconds or more during sleep. Sleep-related movement disorders such as restless leg syndrome (RLS), which involves tingling or prickling sensations in your legs, and a strong urge to move them. Hypersomnia, which is extreme daytime sleepiness. This includes narcolepsy. Circadian rhythm sleep-wake disorders , which are problems falling asleep or waking up at the right times. This may be due to shift work or jet lag. Parasomnia , which is unusual behaviors during sleep or while falling asleep or waking up. This may include sleepwalking, talking, or eating during sleep. Some people who feel tired during the day have a true sleep disorder, while others simply don't get enough sleep. The amount of sleep you need depends on your age, lifestyle, health, and sleep patterns. Most adults need about 7-9 hours each night.",
+    "category": "Diagnosis",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "insomnia"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/sleepdisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-38"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Sleep Disorders — What causes sleep disorders?",
+    "content": "There are different causes for different sleep disorders. They may include: Other health conditions, such as heart disease , lung disease , nerve disorders , or pain Mental illnesses , including depression and anxiety Medicines Genetics Sometimes the cause is unknown. Other factors that may contribute to sleep problems include: Using caffeine or alcohol Having an irregular schedule, such as working the night shift Aging, since older adults may sleep less, spend less time in deep sleep, and wake easily",
+    "category": "Causes",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "cvd",
+      "insomnia",
+      "mental health",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/sleepdisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-39"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Sleep Disorders — What are the symptoms of sleep disorders?",
+    "content": "The symptoms of sleep disorders depend on the specific disorder. Some signs that you may have a sleep disorder include that: You regularly take more than 30 minutes to fall asleep. You regularly wake up several times and then have trouble falling back to sleep, or you wake up too early in the morning. You often feel sleepy during the day, take frequent naps, or fall asleep at the wrong times during the day. Your bed partner says that when you sleep, you snore loudly, snort, gasp, make choking sounds, or stop breathing for short periods. You have creeping or tingling sensations in your legs or arms that are relieved by moving or massaging them, especially in the evening and when trying to fall asleep. Your bed partner notices that your legs or arms jerk often during sleep. You have vivid, dreamlike experiences while falling asleep or dozing. You have episodes of sudden muscle weakness triggered by strong emotions. You feel as though you cannot move or speak for a brief time when you first wake up.",
+    "category": "Symptoms",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "insomnia"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/sleepdisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-40"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Sleep Disorders — How are sleep disorders diagnosed?",
+    "content": "To diagnose a sleep disorder, your health care provider will review your medical and sleep history and do a physical exam. You may also have a sleep study (polysomnogram). Most sleep studies monitor and record data about your body during a full night of sleep. The data includes: Brain wave activity Eye movements Breathing rate Blood pressure Heart rate and electrical activity in the heart and other muscles Other types of sleep studies may check how quickly you fall asleep during daytime naps or how well you can stay awake during the day.",
+    "category": "Diagnosis",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "blood pressure",
+      "insomnia"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/sleepdisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-41"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Sleep Disorders — What are the treatments for sleep disorders?",
+    "content": "Treatments for sleep disorders depend on which disorder you have. They may include: Practicing good sleep habits and other lifestyle changes, such as eating a healthy diet and getting regular exercise Reducing anxiety about sleep with cognitive behavioral therapy or relaxation techniques Using a CPAP (continuous positive airway pressure) machine for sleep apnea Using bright light therapy (in the morning) Taking sleep aid medicines, or natural products such as melatonin Always check with your provider before taking any medicine or supplement. Most sleep aid medicines are generally for short-term use.",
+    "category": "Treatment",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "melatonin",
+      "dieting",
+      "exercise",
+      "insomnia",
+      "mental health",
+      "stress",
+      "supplementation"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/sleepdisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-42"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Healthy Sleep — What is sleep?",
+    "content": "While you are sleeping your brain and body functions are still active. Sleep is a natural process that helps your body restore energy, supports learning and memory, and keeps you healthy. During sleep, your brain cycles through different stages of non-rapid eye movement (non-REM) sleep and rapid eye movement (REM) sleep. Non-REM sleep has three stages that range from light to deep sleep, while REM sleep is when most dreaming occurs. During each stage, your brain waves, breathing, heart rate, and body temperature change throughout the night. Certain phases of sleep help you: Feel rested and energetic the next day. Learn new information, get insight, and form memories. Give your heart and blood vessels a rest. Release growth hormone, which helps children grow and assists in muscle repair and tissue healing for everyone. Release sex hormones, which contribute to puberty and fertility. Maintain a healthy balance of hormones that control hunger and fullness. Strengthen your immune system by producing cytokines (hormones that help the body fight infection). You need all the stages to get a healthy sleep.",
+    "category": "Lifestyle",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "rem",
+      "immunity"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/healthysleep.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-43"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Healthy Sleep — How much sleep do I need?",
+    "content": "The amount of sleep you need depends on your age, lifestyle, health, and sleep patterns. The general recommendations for sleep are: Babies (4-12 months): 12-16 hours a day (including naps) Children (1-2 years): 11-14 hours a day (including naps) Children (3-5 years): 10-13 hours a day (including naps) Children (6-12 years): 9-12 hours a day Teens (13-18 years): 8-10 hours a day Adults (18 years and older): 7-9 hours a day During puberty, teenagers' biological clocks shift. They tend to fall asleep later and wake up later, which can conflict with the early school start times. This is one reason many teenagers don't get enough sleep. Some people think adults need less sleep as they age, but there is no evidence to support this. However, older adults often get less sleep or spend less time in the deep, restful stages of sleep. They also wake up more easily. It's not just the number of hours of sleep you get that matters. The quality of the sleep you get is also important. People whose sleep is frequently interrupted might not get enough of certain stages of sleep. If you are wondering whether you are getting enough sleep, including quality sleep, ask yourself: Do I have trouble getting up in the morning? Do I have trouble focusing during the day? Do I doze off during the day? If you answered yes to any of these questions, you may need to improve your sleep habits.",
+    "category": "Lifestyle",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/healthysleep.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-44"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Healthy Sleep — What are the health effects of not getting enough sleep?",
+    "content": "Sleep is important for overall health. When you don't get enough sleep (sleep deprivation), it does more than just make you feel tired. It can impair your ability to think clearly, react quickly, and form memories. This increases your risk of making mistakes, taking risks, or getting into accidents. Sleep deprivation can also affect your mood, leading to: Irritability Problems with relationships, especially for children and teenagers Depression Anxiety It can also affect your physical health. Not getting enough sleep, or getting poor-quality sleep, increases your risk of: High blood pressure Heart disease Stroke Kidney disease Obesity Type 2 diabetes Not getting enough sleep can also lower your levels of hormones that help children grow and help the body build muscle, repair tissue, and fight infections. Sleep deprivation also magnifies the effect of alcohol. A tired person who drinks too much alcohol will be more impaired than a well-rested person who drinks the same amount.",
+    "category": "Lifestyle",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "blood pressure",
+      "cvd",
+      "immunity",
+      "insulin",
+      "mental health",
+      "obesity",
+      "stress",
+      "stroke"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/healthysleep.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-45"
+  },
+  {
+    "topic": "Sleep",
+    "subtopic": "Healthy Sleep — How can I get better sleep?",
+    "content": "You can take steps to improve your sleep habits. First, make sure that you allow yourself enough time for sleep. Getting enough sleep each night may help you feel happier and more productive during the day. To improve your sleep habits, it also may help to: Go to bed and wake up at the same time every day. Avoid caffeine , especially in the afternoon and evening. Avoid nicotine. Exercise regularly, but not too close to bedtime. Avoid alcoholic drinks before bed. Avoid large meals and drinks late at night. Don't take a nap after 3 p.m. Relax before bed by taking a bath, reading or listening to calm music. Keep your bedroom cool, dark, and quiet. Get rid of distractions such as TVs, computers, and phones. Get enough sunlight exposure during the day. If you can't fall asleep for 20 minutes, get up and do something relaxing. See a health care provider if you have continued trouble sleeping. You may have a sleep disorder , such as insomnia or sleep apnea . In some cases, your provider may suggest trying a sleep study or other treatments. If you are a shift worker, getting good sleep can be more challenging. You may also want to: Take naps and extend your total sleep time Keep the lights bright at work Limit shift changes to help your body adjust Limit caffeine to the first part of your shift Remove sound and light distractions in your bedroom during daytime sleep (for example, use light-blocking curtains or earplugs)",
+    "category": "Prevention",
+    "tags": [
+      "sleep hygiene",
+      "circadian rhythm",
+      "exercise",
+      "insomnia",
+      "smoking"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/healthysleep.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-46"
+  },
+  {
+    "topic": "Hormones",
+    "subtopic": "Thyroid Diseases — Thyroid Diseases",
+    "content": "Your thyroid is a small, butterfly-shaped gland in the front of your neck. It makes hormones that control the way the body uses energy. These hormones affect nearly every organ in your body and control many of your body's most important functions. For example, they affect your breathing, heart rate, weight, digestion, and moods. Thyroid diseases cause your thyroid to make either too much or too little of the hormones. Some of the different thyroid diseases include: Goiter, an enlargement of the thyroid gland Hyperthyroidism , which happens when your thyroid gland makes more thyroid hormones than your body needs Hypothyroidism , which happens when your thyroid gland does not make enough thyroid hormones Thyroid cancer Thyroid nodules, lumps in the thyroid gland Thyroiditis, swelling of the thyroid To diagnose thyroid diseases, your health care provider may use a medical history, physical exam, and thyroid tests . In some cases, your provider may also do a biopsy . Treatment depends on the problem, how severe it is, and what your symptoms are. Possible treatments may include medicines, radioiodine therapy, or thyroid surgery. Dept. of Health and Human Services Office on Women's Health",
+    "category": "Treatment",
+    "tags": [
+      "testosterone",
+      "thyroid",
+      "mental health"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/thyroiddiseases.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-47"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Stress — What is stress?",
+    "content": "Stress is how your brain and body respond to a challenge or demand. When you are stressed, your body releases certain hormones . Hormones are chemicals that travel in your bloodstream and control how different parts of your body work. The hormones that are released when you are stressed make you alert and ready to act. They can raise your blood pressure, heart rate, and blood glucose (blood sugar) levels. This response is sometimes called a \"fight or flight\" response. Everyone gets stressed from time to time. There are different types of stress. It can be short-term or long-term. It can be caused by something that happens once or something that keeps happening. Not all stress is bad. In fact, it can help you survive in a dangerous situation. For example, one kind of stress is the jolt you may feel when a car pulls out in front of you while you are driving. This jolt of hormones helps you quickly hit the brakes to avoid an accident. A little short-term stress can sometimes be helpful. For example, the stress of having a deadline for school or your job may push you to get your work done on time. Once you finish it, that stress goes away. But stress that lasts a long time can harm your health.",
+    "category": "Lifestyle",
+    "tags": [
+      "immunity",
+      "meditation",
+      "blood pressure",
+      "insulin",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/stress.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-48"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Stress — What causes long-term stress?",
+    "content": "Long-term stress, or chronic stress, lasts for weeks, months, or longer. As you go about your life, your body is acting as if you're being threatened. Causes of long-term stress include: Routine stress from the demands of work, school, family needs, money problems, and other daily pressures that don't stop. Stress from sudden, difficult changes in your life, such as divorce, illness, losing your job, or other unhappy life events that often have a long impact. Traumatic stress, which may happen when you're in danger of serious harm or death. Examples include being in a bad accident, a war, a flood, earthquake, or other frightening event. This type of stress can cause a long-lasting problem called post-traumatic stress disorder (PTSD).",
+    "category": "Causes",
+    "tags": [
+      "immunity",
+      "meditation",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/stress.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-49"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Stress — How can long term-stress harm my health?",
+    "content": "People respond to stress in different ways. If you're stressed for a long time you may notice that you are: Getting sick more often than usual because stress weakens your body's ability to fight germs Having stomach problems or trouble digesting food Having trouble sleeping Having headaches Feeling sad, angry, or easily upset When stress keeps going, your body acts as if you're always in danger. That's a lot of strain that may play a part in developing serious health problems, including: Depression Anxiety Heart disease High blood pressure Diabetes It's possible to get used to the symptoms of stress and not even realize there's a problem. So when there's a lot of stress in your life, it's important to pay attention to how it affects you so you can do something about it.",
+    "category": "Lifestyle",
+    "tags": [
+      "immunity",
+      "meditation",
+      "blood pressure",
+      "cvd",
+      "insulin",
+      "mental health",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/stress.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-50"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Stress — How can I manage long-term stress?",
+    "content": "Simple things that improve your mental health may be helpful in managing long-term stress, such as: Get regular exercise. A 30-minute daily walk can help you feel better and help keep your immune system strong, so you don't get sick. Try relaxing activities. You could look for an app or wellness program that uses breathing, meditation, or muscle relaxation exercises. Get enough sleep every night. Avoid too much caffeine . Decide what you need to do now and what can wait. And focus on what you got done each day, not on what you weren't able to do. Ask your family or friends for support.",
+    "category": "Treatment",
+    "tags": [
+      "immunity",
+      "meditation",
+      "exercise",
+      "mental health",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/stress.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-51"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Stress — When should I ask my health care provider for help with stress?",
+    "content": "Get help if you're having severe symptoms for 2 weeks or more, including: Trouble sleeping Changes in your eating that cause unwanted changes in your weight Troubles getting out of bed because of your mood Difficulty focusing your thoughts Losing interest in things you usually enjoy Not being able to do your usual daily activities Always get help right away if stress is causing you to: Have thoughts of suicide Feel you can't cope Use drugs or alcohol more often than usual Your health care provider may refer you to a mental health professional such as a psychologist or social worker. NIH: National Institute of Mental Health",
+    "category": "Diagnosis",
+    "tags": [
+      "immunity",
+      "meditation",
+      "mental health",
+      "stress"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/stress.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-52"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Immune System and Disorders — What is the immune system?",
+    "content": "Your immune system is a complex network of cells, tissues, and organs. Together they help the body fight infections and other diseases. When germs such as bacteria or viruses invade your body, they attack and multiply. This is called an infection. The infection causes the disease that makes you sick. Your immune system protects you from the disease by fighting off the germs.",
+    "category": "Causes",
+    "tags": [
+      "immunity",
+      "meditation"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/immunesystemanddisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-53"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Immune System and Disorders — What are the parts of the immune system?",
+    "content": "The immune system has many different parts, including: Your skin, which can help prevent germs from getting into the body Mucous membranes, which are the moist, inner linings of some organs and body cavities. They make mucus and other substances which can trap and fight germs. White blood cells, which fight germs Organs and tissues of the lymph system , such as the thymus, spleen , tonsils, lymph nodes, lymph vessels, and bone marrow . They produce, store, and carry white blood cells.",
+    "category": "Causes",
+    "tags": [
+      "immunity",
+      "meditation"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/immunesystemanddisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-54"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Immune System and Disorders — How does the immune system work?",
+    "content": "Your immune system defends your body against substances it sees as harmful or foreign. These substances are called antigens. They may be germs such as bacteria and viruses. They might be chemicals or toxins. They could also be cells that are damaged from things like cancer or sunburn . When your immune system recognizes an antigen, it attacks it. This is called an immune response. Part of this response is to make antibodies. Antibodies are proteins that work to attack, weaken, and destroy antigens. Your body also makes other cells to fight the antigen. Afterwards, your immune system remembers the antigen. If it sees the antigen again, it can recognize it. It will quickly send out the right antibodies, so in most cases, you don't get sick. This protection against a certain disease is called immunity.",
+    "category": "Causes",
+    "tags": [
+      "immunity",
+      "meditation",
+      "protein"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/immunesystemanddisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-55"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Immune System and Disorders — What are the types of immunity?",
+    "content": "There are three different types of immunity: Innate immunity is the protection that you are born with. It is your body's first line of defense. It includes barriers such as the skin and mucous membranes. They keep harmful substances from entering the body. It also includes some cells and chemicals which can attack foreign substances. Active immunity , also called adaptive immunity, develops when you are infected with or vaccinated against a foreign substance. Active immunity is usually long-lasting. For many diseases, it can last your entire life. Passive immunity happens when you receive antibodies to a disease instead of making them through your own immune system. For example, newborn babies have antibodies from their mothers. People can also get passive immunity through blood products that contain antibodies. This kind of immunity gives you protection right away. But it only lasts a few weeks or months.",
+    "category": "Prevention",
+    "tags": [
+      "immunity",
+      "meditation"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/immunesystemanddisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-56"
+  },
+  {
+    "topic": "General Wellness",
+    "subtopic": "Immune System and Disorders — What can go wrong with the immune system?",
+    "content": "Sometimes a person may have an immune response even though there is no real threat. This can lead to problems such as allergies , asthma , and autoimmune diseases . If you have an autoimmune disease, your immune system attacks healthy cells in your body by mistake. Other immune system problems happen when your immune system does not work correctly. These problems include immunodeficiency diseases. If you have an immunodeficiency disease, you get sick more often. Your infections may last longer and can be more serious and harder to treat. They are often genetic disorders . There are other diseases that can affect your immune system. For example, HIV is a virus that harms your immune system by destroying your white blood cells. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome). People with AIDS have badly damaged immune systems. They get an increasing number of severe illnesses.",
+    "category": "Treatment",
+    "tags": [
+      "immunity",
+      "meditation"
+    ],
+    "source_type": "government_health_resource",
+    "source": "https://medlineplus.gov/immunesystemanddisorders.html",
+    "credibility_score": 0.95,
+    "evidence_level": "government_health_resource",
+    "id": "local-doc-57"
   }
 ]

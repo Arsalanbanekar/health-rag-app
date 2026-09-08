@@ -19,6 +19,9 @@ class QueryRequest(BaseModel):
 class Source(BaseModel):
     topic: str
     subtopic: Optional[str] = None
+    category: Optional[str] = None
+    tags: Optional[List[str]] = None
+    source_type: Optional[str] = None
     source: Optional[str] = None
     credibility_score: Optional[float] = None
     similarity: Optional[float] = None
@@ -35,11 +38,15 @@ class QueryResponse(BaseModel):
 
 class DocumentInsert(BaseModel):
     topic: str
-    subtopic: Optional[str] = None
+    subtopic: str
     content: str
+    category: str
+    tags: List[str] = []
+    source_type: str
     source: Optional[str] = None
     credibility_score: float = Field(default=0.85, ge=0.0, le=1.0)
     evidence_level: Optional[str] = None
+    embedding: List[float]
 
 
 class HealthStatus(BaseModel):

@@ -53,7 +53,7 @@ DEFAULT_CREDIBILITY = {
 HEADING_CATEGORY_PATTERNS = [
     (re.compile(r"\b(cause|risk factor|why|etiolog|who is (more likely|at risk))", re.I), "Causes"),
     (re.compile(r"\b(symptom|sign|what does it feel|warning sign)", re.I), "Symptoms"),
-    (re.compile(r"\b(diagnos|screen|exam(ine|ination)?\b|blood work|health care provider|see a doctor|when (should|to) (i|you))", re.I), "Diagnosis"),
+    (re.compile(r"\b(diagnos|screen|exams?\b|exam(ine|ination)?\b|blood work|health care provider|see a doctor|when to contact|when (should|to) (i|you))", re.I), "Diagnosis"),
     (re.compile(r"\b(prevent|avoid|reduce (my |your )?risk|protect)", re.I), "Prevention"),
     (re.compile(r"\b(treat|therap|medicat|drug|surgery|manage|cure)", re.I), "Treatment"),
     (re.compile(r"\b(supplement|vitamin|mineral|dose|dosage)", re.I), "Supplements"),

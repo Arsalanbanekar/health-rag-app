@@ -109,6 +109,24 @@ GENETICS_JUNK_HEADINGS = [
     "disclaimers",
 ]
 
+# medlineplus.gov/ency/article/*.htm (Medical Encyclopedia): each h2 lives in
+# its own div.section (div.section-header > h2, plus a sibling div.section-body
+# with the real content). Real sections vary by article type (disease pages get
+# Causes/Symptoms/Treatment; symptom-guide pages get Home Care/What to Expect),
+# but "Alternative Names" reliably marks the start of citations/links/metadata
+# across every article checked — matched as a substring so "Review Date
+# 4/21/2025" (date changes per article) still matches via its "review date"
+# prefix.
+ENCYCLOPEDIA_JUNK_HEADINGS = [
+    "alternative names",
+    "patient instructions",
+    "images",
+    "references",
+    "review date",
+    "related medlineplus health topics",
+    "related health topics",
+]
+
 HEADING_TAGS = ("h1", "h2", "h3", "h4")
 TEXT_TAGS = ("p", "li", "dd")
 
@@ -167,6 +185,14 @@ def _is_genetics_page(url: str) -> bool:
     return "/genetics/condition/" in url.lower()
 
 
+def _is_encyclopedia_page(url: str) -> bool:
+    return "/ency/article/" in url.lower()
+
+
+def _is_labtest_page(url: str) -> bool:
+    return "/lab-tests/" in url.lower()
+
+
 def _clean_title(raw_title: str) -> str:
     """Strip the MedlinePlus site-name suffix, keeping just the topic."""
     # Covers both "Hair problems | Hair loss | MedlinePlus" and
@@ -219,6 +245,92 @@ def _parse_genetics_sections(soup) -> List[Section]:
             break  # everything from here to the end of the page is junk
 
         paragraphs = _collect_text_under(h2, stop_at_heading=True)
+        if paragraphs:
+            sections.append(Section(heading=heading, paragraphs=paragraphs))
+
+    return sections
+
+
+def _parse_encyclopedia_sections(soup) -> List[Section]:
+    """
+    Walk medlineplus.gov/ency/article/*.htm. Unlike the genetics/topic
+    templates, headings and content are NOT flat siblings — each is wrapped as
+        div.section
+          div.section-header > h2
+          div.section-body        (the real text)
+    (confirmed by inspection: naively walking find_next_sibling() from the h2
+    lands on an empty div.section-button, not the content). Stops at the first
+    heading in ENCYCLOPEDIA_JUNK_HEADINGS, same rationale as the genetics page.
+    """
+    root = soup.select_one("article") or soup.select_one("main") or soup.body
+    if root is None:
+        return []
+
+    for selector in STRIP_SELECTORS:
+        for node in root.select(selector):
+            node.decompose()
+
+    sections: List[Section] = []
+    for section_div in root.select("div.section"):
+        h2 = section_div.select_one("div.section-header h2") or section_div.find("h2")
+        if h2 is None:
+            continue
+        heading = normalize_whitespace(h2.get_text(" "))
+        if not heading:
+            continue
+        if any(junk in heading.lower() for junk in ENCYCLOPEDIA_JUNK_HEADINGS):
+            break  # everything from here to the end of the page is junk
+
+        body = section_div.select_one("div.section-body")
+        if body is None:
+            continue
+        paragraphs = []
+        for tag in body.find_all(TEXT_TAGS):
+            text = normalize_whitespace(tag.get_text(" "))
+            if text and not _is_boilerplate(text):
+                paragraphs.append(text)
+        if paragraphs:
+            sections.append(Section(heading=heading, paragraphs=paragraphs))
+
+    return sections
+
+
+def _parse_labtest_sections(soup) -> List[Section]:
+    """
+    Walk medlineplus.gov/lab-tests/*/. Each real Q&A section is its own
+    div.mp-content block (h2 + p/li as flat siblings within that block) —
+    confirmed by inspection: h2 elements do NOT share one common parent the
+    way the topic-summary template's h3 sub-questions do. The references
+    block is also a div.mp-content but additionally carries the mp-refs class,
+    and "Related Health Topics"/"Related Medical Tests" live in an unrelated
+    div.section-header structure entirely outside div.mp-content — so scoping
+    to div.mp-content and excluding mp-refs excludes all three without needing
+    a heading-name denylist.
+    """
+    root = soup.select_one("article") or soup.select_one("main") or soup.body
+    if root is None:
+        return []
+
+    for selector in STRIP_SELECTORS:
+        for node in root.select(selector):
+            node.decompose()
+
+    sections: List[Section] = []
+    for block in root.select("div.mp-content"):
+        if "mp-refs" in (block.get("class") or []):
+            continue
+        h2 = block.find("h2")
+        if h2 is None:
+            continue
+        heading = normalize_whitespace(h2.get_text(" "))
+        if not heading:
+            continue
+
+        paragraphs = []
+        for tag in block.find_all(TEXT_TAGS):
+            text = normalize_whitespace(tag.get_text(" "))
+            if text and not _is_boilerplate(text):
+                paragraphs.append(text)
         if paragraphs:
             sections.append(Section(heading=heading, paragraphs=paragraphs))
 
@@ -301,6 +413,10 @@ def parse_sections(html: str, url: str = "", fallback_title: str = "") -> Tuple[
 
     if _is_genetics_page(url):
         sections = _parse_genetics_sections(soup)
+    elif _is_encyclopedia_page(url):
+        sections = _parse_encyclopedia_sections(soup)
+    elif _is_labtest_page(url):
+        sections = _parse_labtest_sections(soup)
     else:
         sections = _parse_topic_sections(soup, title)
 

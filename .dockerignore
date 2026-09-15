@@ -1,8 +1,0 @@
-frontend/
-brain/
-.git/
-**/__pycache__/
-**/*.pyc
-backend/data/sources/raw/
-backend/.env
-*.md

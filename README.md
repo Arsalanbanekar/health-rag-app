@@ -1,13 +1,3 @@
----
-title: MedAI Health RAG Assistant
-emoji: 🩺
-colorFrom: green
-colorTo: blue
-sdk: docker
-app_port: 7860
-pinned: false
----
-
 # MedAI — Health RAG Assistant
 
 A full-stack RAG (Retrieval-Augmented Generation) health assistant. Answers are grounded in real government health fact sheets, not model memory alone — every response cites the specific source it was retrieved from.

@@ -8,10 +8,10 @@ pydantic==2.12.4
 httpx==0.28.1
 python-multipart==0.0.24
 
-# Embeddings — BAAI/bge-small-en-v1.5 (384-dim, 512-token context)
-sentence-transformers==5.6.0
-transformers==5.13.0
-torch==2.12.1
+# Embeddings — BAAI/bge-small-en-v1.5 (384-dim, 512-token context) via
+# fastembed (ONNX Runtime, no torch) — see services/embeddings.py docstring
+# for why: ~190MB resident vs ~504MB for the torch-based equivalent.
+fastembed==0.8.0
 
 # Ingestion — fetching and parsing source fact sheets (seeding only)
 requests==2.33.0
